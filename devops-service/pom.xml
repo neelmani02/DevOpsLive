@@ -8,19 +8,17 @@
 	<name>devops-service</name>
 	<url>http://maven.apache.org</url>
 
-<repositories>
-    <repository>
-      <id>jira</id>
-      <url>https://maven.atlassian.com/content/repositories/atlassian-public/</url>
-    </repository>
- </repositories>
+	<repositories>
+		<repository>
+			<id>jira</id>
+			<url>https://maven.atlassian.com/content/repositories/atlassian-public/</url>
+		</repository>
+	</repositories>
+
+
 
 	<dependencies>
-	
-		
-		
-		
-		
+
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-json</artifactId>
@@ -61,6 +59,8 @@
 			<version>3.1.0</version>
 		</dependency>
 
+
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -76,6 +76,42 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.4.1</version>
 		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servletapi.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+
+			<groupId>com.google.code.gson</groupId>
+
+			<artifactId>gson</artifactId>
+
+			<version>2.3.1</version>
+
+		</dependency>
+
+
+		<dependency>
+
+			<groupId>org.json</groupId>
+
+			<artifactId>json</artifactId>
+
+			<version>20150729</version>
+
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>devops-service</finalName>
@@ -95,7 +131,9 @@
 	</build>
 	<properties>
 		<spring.version>4.2.1.RELEASE</spring.version>
-		<jdk.version>1.7</jdk.version>
+		<jdk.version>1.8</jdk.version>
+		<jstl.version>1.2</jstl.version>
+		<servletapi.version>3.1.0</servletapi.version>
 	</properties>
 
 

@@ -1,6 +1,8 @@
 package org.deloitte.devops.controller;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Base64;
 
 import javax.ws.rs.Produces;
@@ -19,6 +21,8 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.deloitte.devops.config.EnivironmentConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,21 +32,24 @@ import org.xml.sax.SAXException;
 @RestController
 public class AuthController {
 	
+@Autowired
+private EnivironmentConfig env;
+	
 
 @RequestMapping(method = RequestMethod.GET,value = "/auth")
 public @ResponseBody String authUser() throws ClientProtocolException, IOException, ParserConfigurationException,
-                           SAXException, XPathExpressionException, JSONException {
+                           SAXException, XPathExpressionException, JSONException, URISyntaxException {
              
              
              
-             String authUrl = "https://trackotrack.atlassian.net/rest/auth/1/session";
+             String authUrl = "https://trackcumtrack.atlassian.net/rest/auth/1/session";
 
              HttpClient authClient = HttpClientBuilder.create().build(); 
              HttpPost post = new HttpPost(authUrl);
              
              JSONObject jObject = new JSONObject();
-             jObject.put("username", "neelsindwani@gmail.com");
-             jObject.put("password", "Nov@2017ns");
+             jObject.put("username", "neelmani02@gmail.com");
+             jObject.put("password", "Dec@2017ns");
              
              String userandpass = jObject.toString();
 
@@ -54,16 +61,21 @@ public @ResponseBody String authUser() throws ClientProtocolException, IOExcepti
              String result = EntityUtils.toString(response.getEntity());
              System.out.println("rest.."+result);       */   
              
-             String projsURL = "https://trackotrack.atlassian.net/rest/api/2/issue/DL-10";
-             
+             String projsURL = "https://devopslive.atlassian.net/rest/api/2/search?"
+             		+ "jql=project=\"DevOps+%20+Portal+%20+Project\"+%26+fields=id,key,description,summary,creator,status+%26+startAt=1+%26+maxResults=50";
+             String queryString ="jql=project=\"DevOps Portal Project\"&fields=id,key,description,summary,creator,status&startAt=1&maxResults=50";
+             String cred = env.getUserName()+":"+env.getPassword();
+             String str = env.getURL();
+             URI uri = new URI("https", null, env.getURL(), -1, "/rest/api/2/search", queryString, null);
              HttpClient authClientProj = HttpClientBuilder.create().build(); 
-             HttpGet get = new HttpGet(projsURL);
+             HttpGet get = new HttpGet(uri);
+            
              
              
              get.setHeader("Accept", "application/json");
              get.setHeader("Content-type", "application/json");
              //get.setHeader("-u", "neelsindwani@gmail.com:Nov@2017ns");
-             get.setHeader("Authorization", "Basic " + new String(Base64.getEncoder().encode("neelsindwani@gmail.com:Nov@2017ns".getBytes())));
+             get.setHeader("Authorization", "Basic " + new String(Base64.getEncoder().encode(cred.getBytes())));
              HttpResponse responseProjs = authClientProj.execute(get);
              String projsResult = EntityUtils.toString(responseProjs.getEntity());
               System.out.println("projsResult.."+projsResult);
@@ -71,10 +83,7 @@ public @ResponseBody String authUser() throws ClientProtocolException, IOExcepti
              return projsResult;
 }
 
-@RequestMapping(value = "/index", method = RequestMethod.GET)
-public String index() {
-    return "index";
-}
+
 
 
 }
