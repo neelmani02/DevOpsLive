@@ -9,10 +9,10 @@ body{
 
 
 #header {
-    margin-left:20%;
+    margin-left:10%;
     top: 0px;
-    width: 80%;
-	height: 20%;
+    width: 100%;
+	height: 15%;
 	position: fixed;
 	font-family: 'bgMed',arial,helvetica,sans-serif;
     font-size: 0.6em;
@@ -26,11 +26,11 @@ body{
 }
 
 #footer {
-	margin-left:20%;
+	margin-left:5%;
     left: 0px;
     bottom: 0px;
-    width: 80%;
-	height: 10%;
+    width: 100%;
+	height: 5%;
 	position: fixed;
 	font-family: 'bgMed',arial,helvetica,sans-serif;
     font-size: 0.6em;
@@ -44,7 +44,7 @@ body{
 
 
 #sidemenu {
-    width: 20%;
+    width: 10%;
     background-color:#2B2B2B;
     height: 100%;
     overflow: auto;

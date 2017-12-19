@@ -28,7 +28,7 @@
 	
     <c:forEach var="userStory" items="${list}"> 
     <tr>
-    <td>${userStory.id}</td>
+    <td><a href="/devops-service/getIssue/${userStory.id}">${userStory.id}</a></td>
     <td>${userStory.key}</td>
     <td>${userStory.fields.description}</td>
     <td>${userStory.fields.summary}</td>

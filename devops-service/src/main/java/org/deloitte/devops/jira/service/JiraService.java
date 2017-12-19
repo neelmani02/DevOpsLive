@@ -1,13 +1,17 @@
 package org.deloitte.devops.jira.service;
 
 import java.io.IOException;
+import org.deloitte.devops.jira.model.Status;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.apache.http.client.ClientProtocolException;
 import org.deloitte.devops.jira.integration.JiraIntegration;
+import org.deloitte.devops.jira.model.Fields;
 import org.deloitte.devops.jira.model.Issue;
+import org.deloitte.devops.jira.model.IssueType;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,10 +34,54 @@ public class JiraService {
                 
                 List<Issue> list =
                         Arrays.asList(gson.fromJson(responseJson.get("issues").toString(), Issue[].class));
-                return list;
+                List<Issue> mainList = new ArrayList<>();
+                for (Issue issue : list) {
+                	if(issue.getFields().getIssuetype().getName().equals("Story")) {
+                		mainList.add(issue);
+                	}
+					
+				}
+                
+                return mainList;
 			}
 		
 			return null;
+	}
+	
+	
+	public Issue getIssue(String id) {
+		// TODO Auto-generated method stub
+		    Issue issue =null;
+			String issuesString = jiraIntgration.getIssue(id);
+			if(!issuesString.equals("")) {
+				JSONObject responseJson = new JSONObject(issuesString);
+               
+                issue = new Issue();
+                issue.setId((String)responseJson.get("id"));
+                issue.setKey((String)responseJson.get("key"));
+                responseJson=(JSONObject)responseJson.get("fields");
+                Fields fields =new Fields();
+                fields.setSummary(responseJson.getString("summary"));
+                fields.setDescription(responseJson.getString("description"));
+              
+                Gson gson = new Gson();
+                List<Issue> list =
+                        Arrays.asList(gson.fromJson(responseJson.get("subtasks").toString(), Issue[].class));
+                fields.setSubtasks(list);
+                Status list1 =
+                		(Status)(gson.fromJson(responseJson.get("status").toString(), Status.class));
+                fields.setStatus(list1);
+                IssueType list2 =
+                		(IssueType)(gson.fromJson(responseJson.get("issuetype").toString(), IssueType.class));
+              
+                fields.setIssuetype(list2);
+                issue.setFields(fields);
+                
+                return issue;
+				}
+                
+                return issue;
+		
 	}
 	
 }

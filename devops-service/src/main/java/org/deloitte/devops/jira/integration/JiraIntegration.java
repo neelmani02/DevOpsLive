@@ -56,4 +56,37 @@ public class JiraIntegration {
 	
 	}
 
+	public String getIssue(String id) {
+		// TODO Auto-generated method stub
+		
+		//String queryString =JiraEndPoint.getIssue +"/"+id;
+        String cred = env.getUserName()+":"+env.getPassword();
+        String str = env.getURL();
+        URI uri;
+        String result = "";
+		try {
+			uri = new URI("https", null, env.getURL(), -1, JiraEndPoint.getIssue +"/"+id,"", null);
+		
+        HttpClient authClientProj = HttpClientBuilder.create().build(); 
+        HttpGet get = new HttpGet(uri);
+        get.setHeader("Accept", "application/json");
+        get.setHeader("Content-type", "application/json");
+        //get.setHeader("-u", "neelsindwani@gmail.com:Nov@2017ns");
+        get.setHeader("Authorization", "Basic " + new String(Base64.getEncoder().encode(cred.getBytes())));
+        HttpResponse response = authClientProj.execute(get);
+        result = EntityUtils.toString(response.getEntity());
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return result;
+	
+	}
 }
