@@ -121,7 +121,7 @@
 						<ul>
 							<li>Scipting</li>
 							<li>Testing</li>
-							<li>Pre Deployment</li>
+							<li>Pre Deploy</li>
 							<li>validation</li>
 							<li>Server Check</li>
 							<li>Review</li>
