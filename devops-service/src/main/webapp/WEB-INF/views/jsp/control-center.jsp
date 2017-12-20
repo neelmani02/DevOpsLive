@@ -39,19 +39,37 @@
 	</div>
 
 	<div class="flow-chart">
-		
+		<div class="row">
+            <div class="refresh-button col-sm-2">
+                <a href="javascript:window.location.reload(true)">Refresh</a>
+            </div>
+            <div class="col-sm-2 flow-chart-legend">
+                <div class="green">
+                    <label></label>
+                    <span>&nbsp;Done</span>
+                </div>
+                <div class="yellow">
+                    <label></label>
+                    <span>&nbsp;In Progress</span>
+                </div>
+                <div class="gray">
+                    <label></label>
+                    <span>&nbsp;Planned</span>
+                </div>
+            </div>    
+        </div>
 		<div class="row">
 			<div class="simple user-story col-sm-1">
 				<img>
 				<button class="${map.box1}"><b>User Story Grooming</b></button>
 			</div>
-			<canvas class="horizontal-line col-sm-1" width="200" height="200">
+			<canvas class="horizontal-line col-sm-1" width="200" height="100">
             </canvas>
 			<div class="simple test-scripts col-sm-1">
 				<img>
 				<button class="${subMap.box7}"><b>Test Script Submitted</b></button>
 			</div>
-			<canvas class="horizontal-line col-sm-1" width="200" height="200">
+			<canvas class="horizontal-line col-sm-1" width="200" height="100">
             </canvas>
 			<div class="simple test-scripts col-sm-1">
 				<img>
