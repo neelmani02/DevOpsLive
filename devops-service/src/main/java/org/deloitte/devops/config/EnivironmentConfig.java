@@ -12,7 +12,25 @@ public class EnivironmentConfig {
 	private String userName;
 	@Value("${jira.password}")
 	private String password;
+	@Value("${application.userName}")
+	private String appUserName;
+	@Value("${application.password}")
+	private String appPassword;
 	
+	
+	
+	public String getAppUserName() {
+		return appUserName;
+	}
+	public void setAppUserName(String appUserName) {
+		this.appUserName = appUserName;
+	}
+	public String getAppPassword() {
+		return appPassword;
+	}
+	public void setAppPassword(String appPassword) {
+		this.appPassword = appPassword;
+	}
 	public String getURL() {
 		return URL;
 	}
