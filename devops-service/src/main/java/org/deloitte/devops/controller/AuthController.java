@@ -22,19 +22,23 @@ import org.apache.http.util.EntityUtils;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.deloitte.devops.config.EnivironmentConfig;
+import org.deloitte.devops.jira.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.xml.sax.SAXException;
 
-@RestController
+@Controller
 public class AuthController {
 	
 @Autowired
 private EnivironmentConfig env;
-	
+@Autowired	
+private AuthService authService;
 
 @RequestMapping(method = RequestMethod.GET,value = "/auth")
 public @ResponseBody String authUser() throws ClientProtocolException, IOException, ParserConfigurationException,
@@ -83,8 +87,22 @@ public @ResponseBody String authUser() throws ClientProtocolException, IOExcepti
              return projsResult;
 }
 
+@RequestMapping("/login")
+public  String login()  {
+             
+  return "login";        
+}
+@RequestMapping(value= "/doLogin", method = RequestMethod.POST)
+public  String doLogin(@RequestParam(value="userName") String userName, @RequestParam(value="password") String password)  {
+         
+	
+	boolean validUser= authService.checkApplicationAccess(userName,password);
 
-
+	if(validUser)
+				return "welcome";
+	else
+				return "error";        
+}
 
 }
 

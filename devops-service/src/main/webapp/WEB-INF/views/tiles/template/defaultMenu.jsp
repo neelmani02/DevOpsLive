@@ -4,5 +4,6 @@
 		<li><a href="${pageContext.request.contextPath}/">Home</a></li>
        <li><a href="${pageContext.request.contextPath}/products">Products</a></li>
        <li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
+	 <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 	</ul>
 </nav>
