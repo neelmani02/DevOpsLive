@@ -102,4 +102,15 @@ body{
     margin-left:20%;
     padding-left:10px;
 }
+
+
+.flow-chart .refresh-button {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    width: 150px;
+    margin: 0 30%;
+    background: white;
+    text-align: center;
+}
     
