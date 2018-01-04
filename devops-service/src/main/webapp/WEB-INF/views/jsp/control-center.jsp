@@ -41,8 +41,8 @@
 	<div class="flow-chart">
 		<div class="row">
             <div class="refresh-button col-sm-2">
-                <a href="javascript:window.location.reload(true)">Refresh</a>
             </div>
+           
             <div class="col-sm-2 flow-chart-legend">
                 <div class="green">
                     <label></label>
@@ -168,7 +168,14 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
+	<div class="refresh-button col-sm-2">
+                <a href="javascript:window.location.reload(true)"><b>Refresh</b></a>
+                <br>
+                <a href="https://devopstrack.atlassian.net/secure/RapidBoard.jspa?rapidView=3"><b>Jira Dashboard</b></a>
+                
+            </div>
 	<!-- Minified JS -->
 	<!-- <script type="text/javascript" src="assets/build/app.min.js"></script> -->
 	<script type="text/javascript"
