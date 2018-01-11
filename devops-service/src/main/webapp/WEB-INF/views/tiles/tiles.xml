@@ -8,7 +8,7 @@
        template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">  
        <put-attribute name="title" value="" />  
        <put-attribute name="header" value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />  
-       <put-attribute name="menu" value="/WEB-INF/views/tiles/template/defaultMenu.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/views/tiles/template/defaultSubHeader.jsp" />  
        <put-attribute name="body" value="" />  
        <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
    </definition>  
@@ -37,7 +37,7 @@
        <put-attribute name="body" value="/WEB-INF/views/jsp/list.jsp" />  
    </definition>  
    
-    <definition name="control" extends="change-definition">  
+    <definition name="control" extends="base-definition">  
        <put-attribute name="title" value="control" />  
        <put-attribute name="body" value="/WEB-INF/views/jsp/control-center.jsp" />  
    </definition>  

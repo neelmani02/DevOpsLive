@@ -2,20 +2,6 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- Minified CSS -->
-<!-- <link rel="stylesheet" href="assets/build/app.min.css"> -->
-<link href="<c:url value='/static/css/app.min.css' />" rel="stylesheet"></link>
-<title></title>
-</head>
-<body>
 	<div class="item-wrapper">
 		<div class="item item-id">
 			<label>ITEM ID</label> <span>${id}</span>
@@ -30,8 +16,7 @@
 	<div class="item-wrapper no-border">
 		<div class="item stage">
 			<label>CURRENT STAGE</label> <span>${box}</span>
-			<%--             <span>${subBox}</span>
- --%>
+			
 		</div>
 		<div class="item status">
 			<label>CURRENT STATUS</label> <span>${status}</span>
@@ -171,23 +156,8 @@
 		
 	</div>
 	<div class="refresh-button col-sm-2">
-                <a href="javascript:window.location.reload(true)"><b>Refresh</b></a>
-                <br>
-                <a href="https://devopstrack.atlassian.net/secure/RapidBoard.jspa?rapidView=3"><b>Jira Dashboard</b></a>
-                
-            </div>
-	<!-- Minified JS -->
-	<!-- <script type="text/javascript" src="assets/build/app.min.js"></script> -->
-	<script type="text/javascript"
-		src="<c:url value='/static/js/app.min.js' />"></script>
-
-	<!-- jQuery library -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</body>
-</html>
+        <a href="javascript:window.location.reload(true)"><b>Refresh</b></a>
+        <br>
+        <a href="https://devopstrack.atlassian.net/secure/RapidBoard.jspa?rapidView=3"><b>Jira Dashboard</b></a>
+        
+    </div>

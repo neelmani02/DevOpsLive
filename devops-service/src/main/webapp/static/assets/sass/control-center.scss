@@ -1,0 +1,100 @@
+.item-wrapper{
+    border-bottom: 1px solid blueviolet;
+    &.no-border{
+        border: none;
+    }
+    .item{
+        font-size: 14px;
+        display: inline-block;
+        padding: 10px;
+        span{
+            color:  blueviolet;
+        }
+    }
+}
+.flow-chart{
+    margin: 0 20px;
+    .refresh-button{
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+        width: 150px;
+        margin: 0 30%;
+        background: lightblue;        
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    .flow-chart-legend{
+        border: 1px solid #000;
+        padding: 10px;
+        div{
+            padding: 10px;
+            label{
+                width: 30px;
+                height: 10px;
+            }
+            &.green{
+                label{
+                    background: green;
+                }
+            }
+            &.yellow{
+                label{
+                    background: deepskyblue;
+                }
+            }
+            &.gray{
+                label{
+                    background: gray;
+                }
+            }
+        }
+    }
+    .simple{
+        button{
+            background: gray;
+            &.green{
+                background: green;
+            }
+            &.yellow{
+                background: deepskyblue;
+            }
+        }
+    }
+    .task-box{
+        .border-full{
+            border: 1px solid #8c8c8c;
+            padding: 30px 10px;
+            position: relative;
+            text-align: center;
+            &.green{
+                border: 1px solid green;
+            }
+            &.yellow{
+                border: 1px solid deepskyblue;
+            }
+            .task-headline{
+                position: absolute;
+                top: -16px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 5px 10px;
+                border-radius: 5px;
+                background: #8c8c8c;
+                &.green{
+                    background: green;
+                }
+                &.yellow{
+                    background: deepskyblue;
+                }
+            }
+            li{
+                list-style-type: disc;
+                text-align: left;
+            }
+        }
+    }
+}

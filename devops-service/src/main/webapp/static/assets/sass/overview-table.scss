@@ -1,0 +1,15 @@
+table{
+    margin: 0 auto;
+    thead{
+        background: gray;
+    }
+    th,td{
+        border: 1px solid #000;
+        padding: 10px;
+    }
+    tbody{
+        tr:nth-child(even){
+            background: lightgrey; 
+        }
+    }
+}

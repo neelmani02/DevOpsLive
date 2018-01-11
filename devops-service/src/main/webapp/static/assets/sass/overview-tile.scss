@@ -1,0 +1,25 @@
+.overview-wrapper{
+	text-align: center;
+	.tile-wrapper{
+		display: inline-block;
+	    border: 1px solid #000;
+	    margin: 30px 10px;
+	    text-align: center;
+	    width: 200px;
+	    &.active{
+	    	cursor: pointer;
+	    }
+	    &.in-active{
+	    	background: lightgrey;
+	    }
+	    .number{
+	        font-size: 90px;
+	        font-family: sans-serif;
+	    }
+	    .name{
+	        font-size: 20px;
+	        font-weight: bold;
+	        font-family: sans-serif;
+	    }
+	}
+}

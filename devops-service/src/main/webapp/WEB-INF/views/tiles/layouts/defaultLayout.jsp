@@ -8,8 +8,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title><tiles:getAsString name="title" /></title>
-    <link href="<c:url value='/static/css/bootstrap.css' />"  rel="stylesheet"></link>
-    <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="<c:url value='/static/assets/build/app.min.css' />" rel="stylesheet"></link>
 </head>
   
 <body>
@@ -28,5 +29,18 @@
         <footer id="footer">
             <tiles:insertAttribute name="footer" />
         </footer>
+        
+        <!-- Minified JS -->
+	<!-- <script type="text/javascript" src="assets/build/app.min.js"></script> -->
+	<script type="text/javascript"
+		src="<c:url value='/static/assets/build/app.min.js' />"></script>
+
+	<!-- jQuery library -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
