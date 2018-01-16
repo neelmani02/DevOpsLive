@@ -25,7 +25,24 @@
 
 	<div class="flow-chart">
 		<div class="row">
-            <div class="refresh-button col-sm-2">
+			<div class="simple user-story col-sm-2">
+				<img src="/devops-service/static/assets/images/business-analyst.png">
+				<button class="${map.box1}"><b>User Story Grooming</b></button>
+			</div>
+			<canvas class="horizontal-line col-sm-1" width="100" height="100">
+            </canvas>
+			<div class="simple test-scripts col-sm-2">
+				<img src="/devops-service/static/assets/images/test-lead.png">
+				<button class="${subMap.box7}"><b>Test Script Submitted</b></button>
+			</div>
+			<canvas class="horizontal-line col-sm-1" width="100" height="100">
+            </canvas>
+			<div class="simple test-scripts col-sm-2">
+				<img src="/devops-service/static/assets/images/product-owner.png">
+				<button class="${subMap.box8}"><b>Test Script Approved</b></button>
+			</div>
+			 <div class="refresh-button col-sm-2">
+			 	<span class="glyphicon glyphicon-refresh"></span>
             </div>
            
             <div class="col-sm-2 flow-chart-legend">
@@ -41,44 +58,26 @@
                     <label></label>
                     <span>&nbsp;Planned</span>
                 </div>
-            </div>    
-        </div>
-		<div class="row">
-			<div class="simple user-story col-sm-1">
-				<img>
-				<button class="${map.box1}"><b>User Story Grooming</b></button>
-			</div>
-			<canvas class="horizontal-line col-sm-1" width="200" height="100">
-            </canvas>
-			<div class="simple test-scripts col-sm-1">
-				<img>
-				<button class="${subMap.box7}"><b>Test Script Submitted</b></button>
-			</div>
-			<canvas class="horizontal-line col-sm-1" width="200" height="100">
-            </canvas>
-			<div class="simple test-scripts col-sm-1">
-				<img>
-				<button class="${subMap.box8}"><b>Test Script Approved</b></button>
-			</div>
+            </div>  
 		</div>
 
 		<div class="row">
-			<canvas class="vertical-line col-sm-1" width="200" height="200">
+			<canvas class="vertical-line col-sm-2" width="400" height="100">
             </canvas>
 		</div>
 		<div class="row">
-			<div class="simple approval col-sm-1">
-				<img>
+			<div class="simple approval col-sm-2">
+				<img src="/devops-service/static/assets/images/product-owner.png">
 				<button class="${map.box2}"><b>User Story Approved</b></button>
 			</div>
 		</div>
 		<div class="row">
-			<canvas class="vertical-line col-sm-1" width="200" height="200">
+			<canvas class="vertical-line col-sm-2" width="400" height="100">
             </canvas>
 		</div>
 		<div class="row">
 			<div class="task-box col-sm-2">
-				<img>
+				<img src="/devops-service/static/assets/images/developer.png">
 				<div class="border-full ${map.box3}">
 					<p class="task-headline ${map.box3}"><b>Dev Box</b></p>
 					<div class="border-full ${map.box3}">
@@ -94,10 +93,29 @@
 					</div>
 				</div>
 			</div>
-			<canvas class="horizontal-line col-sm-1" width="200" height="600">
+			<canvas class="horizontal-line col-sm-1" width="60" height="200">
+                </canvas>
+             <div class="task-box col-sm-2">
+				<img class="no-img">
+				<div class="border-full ${map.box3}">
+					<p class="task-headline ${map.box3}"><b>CI Box</b></p>
+					<div class="border-full ${map.box3}">
+						Deploy to CI
+						<ul>
+							<li>Code</li>
+							<li>Quality &</li>
+							<li>Coverage</li>
+							<li>Check</li>
+							<li>Best</li>
+							<li>Practices</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<canvas class="horizontal-line col-sm-1" width="60" height="200">
                 </canvas>
 			<div class="task-box col-sm-2">
-				<img>
+				<img src="/devops-service/static/assets/images/product-owner.png">
 				<div class="border-full ${map.box4}">
 					<p class="task-headline ${map.box4}"><b>Test Box</b></p>
 					<div class="border-full ${map.box4}">
@@ -113,10 +131,10 @@
 					</div>
 				</div>
 			</div>
-			<canvas class="horizontal-line col-sm-1" width="200" height="600">
+			<canvas class="horizontal-line col-sm-1" width="60" height="200">
                 </canvas>
 			<div class="task-box col-sm-2">
-				<img>
+				<img src="/devops-service/static/assets/images/release-manager.png">
 				<div class="border-full ${map.box5}">
 					<p class="task-headline ${map.box5}"><b>Pre Prod</b></p>
 					<div class="border-full ${map.box5}">
@@ -132,10 +150,10 @@
 					</div>
 				</div>
 			</div>
-			<canvas class="horizontal-line col-sm-1" width="200" height="600">
+			<canvas class="horizontal-line col-sm-1" width="60" height="200">
                 </canvas>
 			<div class="task-box col-sm-2">
-				<img>
+				<img class="no-img">
 				<div class="border-full ${map.box6}">
 					<p class="task-headline ${map.box6}"><b>Production</b></p>
 					<div class="border-full ${map.box6}">
@@ -153,8 +171,11 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">  
+        </div>
 		
 	</div>
+	
 	<div class="refresh-button col-sm-2">
         <a href="javascript:window.location.reload(true)"><b>Refresh</b></a>
         <br>
