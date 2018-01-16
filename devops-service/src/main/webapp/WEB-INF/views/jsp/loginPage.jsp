@@ -10,12 +10,12 @@
 	<div class="content">
 		<h3>REGISTERED LEAD/MANAGER</h3>
 		<form action="doLogin" method="post">  
-			<div>E-MAIL</div><input type="text" name="email"/>  
+			<div>E-MAIL</div><input type="text" name="userName"/>  
 			<div>PASSOWRD</div><input type="password" name="password"/>
 			<div>
 			<a>FORGOT YOUR PASSOWRD?</a>
 			</div>
-			<button type="submit" >LOGIN</button>
+			<input class="login-button" type="submit" value="LOGIN"/>
 		</form>
 	</div>
 </div>
