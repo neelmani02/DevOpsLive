@@ -46,6 +46,8 @@ public class JiraViewController{
 	public String getAllIssues(ModelMap model) {
 		List<Issue> list = jiraService.getAllIssues();
 		model.addAttribute("list", list);
+		model.addAttribute("name", "Jon Doe");
+
 		return "list";
 	}
 	
@@ -146,7 +148,7 @@ public class JiraViewController{
 	 
 	   
 		}
-		
+		model.addAttribute("name", "Jon Doe");
 		return "control";
 	}
 	

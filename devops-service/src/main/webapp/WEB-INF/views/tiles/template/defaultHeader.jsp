@@ -12,4 +12,4 @@
        </ul>        
    </nav>
    <h1>DEVOPS LIVE</h1>
-   <div class="user-name">Jon Doe</div>
+   <div class="user-name">${name}</div>

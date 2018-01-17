@@ -25,6 +25,7 @@ import org.deloitte.devops.config.EnivironmentConfig;
 import org.deloitte.devops.jira.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -93,13 +94,15 @@ public  String login()  {
   return "login";        
 }
 @RequestMapping(value= "/doLogin", method = RequestMethod.POST)
-public  String doLogin(@RequestParam(value="userName") String userName, @RequestParam(value="password") String password)  {
+public  String doLogin(@RequestParam(value="userName") String userName, @RequestParam(value="password") String password,ModelMap model)  {
          
 	
 	boolean validUser= authService.checkApplicationAccess(userName,password);
 
-	if(validUser)
+	if(validUser) {
+		model.addAttribute("name", "Jon Doe");
 				return "welcome";
+	}
 	else
 				return "error";        
 }
