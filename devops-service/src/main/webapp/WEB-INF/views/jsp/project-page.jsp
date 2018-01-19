@@ -9,19 +9,19 @@
 		<div class="left-margin">
 			<div class="row">
 				<div class="col-sm-9 project">
-				<a href="" class="project-name">ELI LILLY</a>
+				<a href="/devops-service/getAllIssues" class="project-name">DEVOPS LIVE</a>
 				<img src="/devops-service/static/assets/images/green-ball.png">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-9 project">
-				<a href="" class="project-name">KAISER PERMANENTE</a>
+				<a href="#" class="project-name">ELI LILLY</a>
 				<img src="/devops-service/static/assets/images/yellow-ball.png">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-9 project">
-				<a href="" class="project-name">ASTRAZENECA</a>
+				<a href="#" class="project-name">ASTRAZENECA</a>
 				<img src="/devops-service/static/assets/images/green-ball.png">
 				</div>
 			</div>
