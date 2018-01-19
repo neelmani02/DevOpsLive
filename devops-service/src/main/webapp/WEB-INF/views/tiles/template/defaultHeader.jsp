@@ -13,7 +13,7 @@
 	       </ul>
 	       <ul>            
 	           <li><a href="#">Help</a></li>
-	           <li><a href="#">Login</a></li>           
+	           <li><a href="/devops-service/login">Login</a></li>           
 	       </ul>
        </div>            
                
