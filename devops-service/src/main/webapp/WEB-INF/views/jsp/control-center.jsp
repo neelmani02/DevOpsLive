@@ -176,9 +176,9 @@
 		
 	</div>
 	
-	<div class="refresh-button col-sm-2">
+<!-- 	<div class="refresh-button col-sm-2">
         <a href="javascript:window.location.reload(true)"><b>Refresh</b></a>
         <br>
         <a href="https://devopstrack.atlassian.net/secure/RapidBoard.jspa?rapidView=3"><b>Jira Dashboard</b></a>
         
-    </div>
+    </div> -->

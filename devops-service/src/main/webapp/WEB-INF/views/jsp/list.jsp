@@ -24,23 +24,23 @@
 		<thead>
 			<tr>
 				<th>UserStory Id</th>
-				<th>UserStory Key</th>
+				<!-- <th>UserStory Key</th> -->
 				<th>Description</th>
 				<th>Summary</th>
 				<th>Current Status</th>
-				<th>Creator</th>
-			</tr>
+<!-- 				<th>Creator</th>
+ -->			</tr>
 		</thead>
 		<tbody>			
 		    <c:forEach var="userStory" items="${list}"> 
 				<tr>
 					<td><a href="/devops-service/getIssue/${userStory.id}">${userStory.id}</a></td>
-					<td>${userStory.key}</td>
-					<td>${userStory.fields.description}</td>
+<%-- 					<td>${userStory.key}</td>
+ --%>					<td>${userStory.fields.description}</td>
 					<td>${userStory.fields.summary}</td>
 					<td>${userStory.fields.status.name}</td>
-					<td>${userStory.fields.creator.displayName}</td>				    
-				</tr>
+<%-- 					<td>${userStory.fields.creator.displayName}</td>				    
+ --%>				</tr>
 			</c:forEach>
 		 </tbody>
 	</table>
