@@ -4,6 +4,7 @@
            <span class="glyphicon glyphicon-menu-hamburger"></span>
        </a>
        <div class="side-menu">
+       		<img class="deloitte-icon" src="/devops-service/static/assets/images/deloitte-icon.png">
        		<h2>MENU</h2>
        		<ul>            
 	           <li><a href="#">About Control Center</a></li>
