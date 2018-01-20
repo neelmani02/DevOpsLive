@@ -19,4 +19,5 @@
                
    </nav>
    <h1>DEVOPS LIVE</h1>
+   <p>Experience and Believe</p>
    <div class="user-name">${name}</div>

@@ -65,6 +65,15 @@ header{
         display: inline-block;
         margin: 0;
     }
+    p{
+    	text-align: center;
+        font-size: 11px;
+        width: 100%;
+        margin: 0;
+        color: lightgray;
+	    font-style: italic;
+	    font-family: brush-script;
+    }
     .user-name{
         padding: 10px;
         font-size: 20px;
