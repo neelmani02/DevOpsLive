@@ -41,9 +41,9 @@
 				<img src="/devops-service/static/assets/images/product-owner.png">
 				<button class="${subMap.box8}"><b>Test Script Approved</b></button>
 			</div>
-			 <div class="refresh-button col-sm-2">
+			 <a class="col-sm-2" id="refresh-button" href="">
 			 	<span class="glyphicon glyphicon-refresh"></span>
-            </div>
+            </a>
            
             <div class="col-sm-2 flow-chart-legend">
                 <div class="green">
