@@ -89,8 +89,8 @@ public @ResponseBody String authUser() throws ClientProtocolException, IOExcepti
 }
 
 @RequestMapping("/login")
-public  String login()  {
-             
+public  String login(ModelMap model)  {
+	model.addAttribute("subHeader","PROJECT LEAD / PROJECT MANAGER LOGIN");
   return "login";        
 }
 @RequestMapping(value= "/doLogin", method = RequestMethod.POST)
@@ -101,10 +101,15 @@ public  String doLogin(@RequestParam(value="userName") String userName, @Request
 
 	if(validUser) {
 		model.addAttribute("name", "Jon Doe");
+		model.addAttribute("subHeader","Welcome to DevOps Agile Beacon Jon!!");
+
 				return "welcome";
 	}
-	else
-				return "error";        
+	else {
+		model.addAttribute("subHeader","Access Denied");
+		return "error";        
+
+	}
 }
 
 }

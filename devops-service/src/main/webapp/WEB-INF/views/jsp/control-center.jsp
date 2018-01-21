@@ -12,6 +12,9 @@
 		<div class="item item-decsription">
 			<label>ITEM DESCRIPTION</label> <span>${description}</span>
 		</div>
+		<div class="item item-decsription">
+			<a href="/devops-service/getAllIssues"><label>ALL ISSUES</label> </a>
+		</div>
 	</div>
 	<div class="item-wrapper no-border">
 		<div class="item stage">

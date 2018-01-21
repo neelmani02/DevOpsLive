@@ -47,6 +47,7 @@ public class JiraViewController{
 		List<Issue> list = jiraService.getAllIssues();
 		model.addAttribute("list", list);
 		model.addAttribute("name", "Jon Doe");
+		model.addAttribute("subHeader","DEVOPS LIVE  PROJECT -> TRIAL VISIT OVERVIEW");
 
 		return "list";
 	}
@@ -168,6 +169,8 @@ public class JiraViewController{
 	   
 		}
 		model.addAttribute("name", "Jon Doe");
+		model.addAttribute("subHeader","CONTROL CENTRE");  
+				
 		return "control";
 	}
 	
@@ -231,7 +234,13 @@ public class JiraViewController{
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index() {
+	public String index(ModelMap model) {
+		model.addAttribute("subHeader", "Experience and Explore!!");
 	    return "index";
+	}
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public String about(ModelMap model) {
+		model.addAttribute("subHeader", "Experience and Explore!!");
+	    return "about";
 	}
 }
