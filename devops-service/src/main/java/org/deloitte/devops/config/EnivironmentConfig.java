@@ -17,8 +17,32 @@ public class EnivironmentConfig {
 	@Value("${application.password}")
 	private String appPassword;
 	
+
+	@Value("${jenkins.url}")
+	private String jenkinsUrl;
+	@Value("${jenkins.username}")
+	private String jenkinsUserName;
+	@Value("${jenkins.password}")
+	private String jenkinsPassword;
 	
-	
+	public String getJenkinsUrl() {
+		return jenkinsUrl;
+	}
+	public void setJenkinsUrl(String jenkinsUrl) {
+		this.jenkinsUrl = jenkinsUrl;
+	}
+	public String getJenkinsUserName() {
+		return jenkinsUserName;
+	}
+	public void setJenkinsUserName(String jenkinsUserName) {
+		this.jenkinsUserName = jenkinsUserName;
+	}
+	public String getJenkinsPassword() {
+		return jenkinsPassword;
+	}
+	public void setJenkinsPassword(String jenkinsPassword) {
+		this.jenkinsPassword = jenkinsPassword;
+	}
 	public String getAppUserName() {
 		return appUserName;
 	}

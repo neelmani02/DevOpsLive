@@ -97,9 +97,9 @@
                 </canvas>
              <div class="task-box col-sm-2">
 				<img class="no-img">
-				<div class="border-full ${map.box3}">
-					<p class="task-headline ${map.box3}"><b>CI Box</b></p>
-					<div class="border-full ${map.box3}">
+				<div class="border-full ${map.box4}">
+					<p class="task-headline ${map.box4}"><b>CI Box</b></p>
+					<div class="border-full ${map.box4}">
 						Deploy to CI
 						<ul>
 							<li>Code</li>
@@ -116,9 +116,9 @@
                 </canvas>
 			<div class="task-box col-sm-2">
 				<img src="/devops-service/static/assets/images/product-owner.png">
-				<div class="border-full ${map.box4}">
-					<p class="task-headline ${map.box4}"><b>Test Box</b></p>
-					<div class="border-full ${map.box4}">
+				<div class="border-full ${map.box5}">
+					<p class="task-headline ${map.box5}"><b>Test Box</b></p>
+					<div class="border-full ${map.box5}">
 						Test Activities
 						<ul>
 							<li>Build</li>
@@ -135,9 +135,9 @@
                 </canvas>
 			<div class="task-box col-sm-2">
 				<img src="/devops-service/static/assets/images/release-manager.png">
-				<div class="border-full ${map.box5}">
-					<p class="task-headline ${map.box5}"><b>Pre Prod</b></p>
-					<div class="border-full ${map.box5}">
+				<div class="border-full ${map.box6}">
+					<p class="task-headline ${map.box6}"><b>Pre Prod</b></p>
+					<div class="border-full ${map.box6}">
 						Pre-Prod Activities
 						<ul>
 							<li>Scipting</li>
@@ -154,9 +154,9 @@
                 </canvas>
 			<div class="task-box col-sm-2">
 				<img class="no-img">
-				<div class="border-full ${map.box6}">
-					<p class="task-headline ${map.box6}"><b>Production</b></p>
-					<div class="border-full ${map.box6}">
+				<div class="border-full ${map.box9}">
+					<p class="task-headline ${map.box9}"><b>Production</b></p>
+					<div class="border-full ${map.box9}">
 						Production Activities
 						<ul>
 							<li>System access</li>

@@ -1,17 +1,15 @@
 package org.deloitte.devops.jira.service;
 
-import java.io.IOException;
-import org.deloitte.devops.jira.model.Status;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.http.client.ClientProtocolException;
+import org.deloitte.devops.jenkins.integration.JenkinsIntegration;
 import org.deloitte.devops.jira.integration.JiraIntegration;
 import org.deloitte.devops.jira.model.Fields;
 import org.deloitte.devops.jira.model.Issue;
 import org.deloitte.devops.jira.model.IssueType;
+import org.deloitte.devops.jira.model.Status;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +22,8 @@ public class JiraService {
 	@Autowired
 	private JiraIntegration jiraIntgration;
 
+	@Autowired
+	private JenkinsIntegration jenkinsIntegration;
 	public List<Issue> getAllIssues() {
 		// TODO Auto-generated method stub
 		
@@ -36,12 +36,14 @@ public class JiraService {
                         Arrays.asList(gson.fromJson(responseJson.get("issues").toString(), Issue[].class));
                 List<Issue> mainList = new ArrayList<>();
                 for (Issue issue : list) {
+                	 issue.getFields().setJobName(issue.getFields().getCustomfield_10101());
                 	if(issue.getFields().getIssuetype().getName().equals("Story")) {
                 		mainList.add(issue);
                 	}
+                	
 					
 				}
-                
+                jenkinsIntegration.setBuildStatus(mainList);
                 return mainList;
 			}
 		

@@ -83,6 +83,7 @@ public class JiraViewController{
 		   map.put("box4", "grey");
 		   map.put("box5", "grey");
 		   map.put("box6", "grey");
+		   map.put("box9", "grey");
 	   }
 	   if(boxStatus.equals("User Story Approved")){
 		   map.put("box1", "green");
@@ -91,6 +92,7 @@ public class JiraViewController{
 		   map.put("box4", "grey");
 		   map.put("box5", "grey");
 		   map.put("box6", "grey");
+		   map.put("box9", "grey");
        model.addAttribute("map", map);
 	   }
 	   if(boxStatus.equals("Dev Box")){
@@ -100,24 +102,38 @@ public class JiraViewController{
 		   map.put("box4", "grey");
 		   map.put("box5", "grey");
 		   map.put("box6", "grey");
+		   map.put("box9", "grey");
       
 	   }
-	   if(boxStatus.equals("Test Box")){
+	   
+	   if(boxStatus.equals("CI Box")){
 		   map.put("box1", "green");
 		   map.put("box2", "green");
 		   map.put("box3", "green");
 		   map.put("box4", "yellow");
 		   map.put("box5", "grey");
 		   map.put("box6", "grey");
+		   map.put("box9", "grey");
      
 	   }
-	   if(boxStatus.equals("Pre Prod")){
+	   if(boxStatus.equals("Test Box")){
 		   map.put("box1", "green");
 		   map.put("box2", "green");
 		   map.put("box3", "green");
 		   map.put("box4", "green");
 		   map.put("box5", "yellow");
 		   map.put("box6", "grey");
+		   map.put("box9", "grey");
+      
+	   }
+	   if(boxStatus.equals("Pre Prod")){
+		   map.put("box1", "green");
+		   map.put("box2", "green");
+		   map.put("box3", "green");
+		   map.put("box4", "green");
+		   map.put("box5", "green");
+		   map.put("box6", "yellow");
+		   map.put("box9", "grey");
 	   }
 	   if(boxStatus.equals("Production")){
 		   map.put("box1", "green");
@@ -125,9 +141,12 @@ public class JiraViewController{
 		   map.put("box3", "green");
 		   map.put("box4", "green");
 		   map.put("box5", "green");
-		   map.put("box6", "yellow");
+		   map.put("box6", "green");
+		   map.put("box9", "yellow");
       
 	   }
+	   
+	   
 	   Map<String,String> subMap =new HashMap<>();
 	   if(subBoxStatus.equals("")|| subBoxStatus.equals("Test Script Submitted")) {
 		   subMap.put("box7", "yellow");
@@ -188,7 +207,10 @@ public class JiraViewController{
 			break;
 		case "IN DEVELOPMENT":
 			box = "Dev Box";
-			break;
+		break;
+		case "RELEASE TO TEST":
+			box = "CI Box";
+			break;	
 		case "IN TEST":
 			box = "Test Box";
 			break;

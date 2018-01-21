@@ -10,6 +10,27 @@ public class Fields {
 	 private Status status;
 	 private IssueType issuetype;
 	 private List<Issue> subtasks;
+	 private String jobName; 
+	 private String customfield_10101;
+	 private String buildStatus;
+	public String getJobName() {
+		return jobName;
+	}
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+	}
+	public String getCustomfield_10101() {
+		return customfield_10101;
+	}
+	public void setCustomfield_10101(String customfield_10101) {
+		this.customfield_10101 = customfield_10101;
+	}
+	public String getBuildStatus() {
+		return buildStatus;
+	}
+	public void setBuildStatus(String buildStatus) {
+		this.buildStatus = buildStatus;
+	}
 	public List<Issue> getSubtasks() {
 		return subtasks;
 	}
