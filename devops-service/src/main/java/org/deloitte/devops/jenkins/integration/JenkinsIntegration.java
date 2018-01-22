@@ -218,5 +218,51 @@ public class JenkinsIntegration {
 		
 		return null;
 	}
+	public void setBuildStatusForIssue(Issue issue) {
+		// TODO Auto-generated method stub
+		
+		String queryString =JenkinsEndPoint.jenkisBuildStatusApiUrl;//    /lastBuild/api/json
+        String jenkinsCred = env.getJenkinsUserName()+":"+env.getJenkinsPassword();
+        String str = env.getJenkinsUrl();  //10.14.224.229:8080/job
+        URI uri;
+        String result = "";
+
+		try {
+	
+			
+			if(null !=issue.getFields().getJobName() && issue.getFields().getStatus().getName().equals(JenkinsEndPoint.ISSUESTATUSINRELEASETOTEST))
+			{
+			
+				
+				
+								uri = new URI(env.getJenkinsUrl() +"/job/"+issue.getFields().getJobName() +queryString);
+		
+								HttpClient authClientProj = HttpClientBuilder.create().build(); 
+								HttpGet get = new HttpGet(uri);
+								get.setHeader("Accept", "application/json");
+								get.setHeader("Content-type", "application/json");
+
+								get.setHeader("Authorization", "Basic " + new String(Base64.getEncoder().encode(jenkinsCred.getBytes())));
+								HttpResponse response = authClientProj.execute(get);
+								result = EntityUtils.toString(response.getEntity());
+								setBuildStatus(issue, result);
+							
+        
+			}
+	
+		
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClientProtocolException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
 
 }
