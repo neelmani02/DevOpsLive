@@ -67,7 +67,8 @@ public class JiraService {
                 Fields fields =new Fields();
                 fields.setSummary(responseJson.getString("summary"));
                 fields.setDescription(responseJson.getString("description"));
-              fields.setCustomfield_10101(responseJson.getString("customfield_10101"));
+           
+                fields.setCustomfield_10101(responseJson.optString("customfield_10101"));
               fields.setJobName(fields.getCustomfield_10101());
                 Gson gson = new Gson();
                 List<Issue> list =
