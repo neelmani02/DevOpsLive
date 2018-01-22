@@ -230,7 +230,7 @@ public class JenkinsIntegration {
 		try {
 	
 			
-			if(null !=issue.getFields().getJobName() && issue.getFields().getStatus().getName().equals(JenkinsEndPoint.ISSUESTATUSINRELEASETOTEST))
+			if(null !=issue.getFields().getJobName() && issue.getFields().getJobName().length()>0  && issue.getFields().getStatus().getName().equals(JenkinsEndPoint.ISSUESTATUSINRELEASETOTEST))
 			{
 			
 				
