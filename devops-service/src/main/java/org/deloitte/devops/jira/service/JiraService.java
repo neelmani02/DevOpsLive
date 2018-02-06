@@ -36,7 +36,7 @@ public class JiraService {
                         Arrays.asList(gson.fromJson(responseJson.get("issues").toString(), Issue[].class));
                 List<Issue> mainList = new ArrayList<>();
                 for (Issue issue : list) {
-                	 issue.getFields().setJobName(issue.getFields().getCustomfield_10101());
+                	 issue.getFields().setJobName(issue.getFields().getCustomfield_10201());
                 	if(issue.getFields().getIssuetype().getName().equals("Story")) {
                 		mainList.add(issue);
                 	}
@@ -68,8 +68,8 @@ public class JiraService {
                 fields.setSummary(responseJson.getString("summary"));
                 fields.setDescription(responseJson.getString("description"));
            
-                fields.setCustomfield_10101(responseJson.optString("customfield_10101"));
-              fields.setJobName(fields.getCustomfield_10101());
+                fields.setCustomfield_10201(responseJson.optString("customfield_10201"));
+              fields.setJobName(fields.getCustomfield_10201());
                 Gson gson = new Gson();
                 List<Issue> list =
                         Arrays.asList(gson.fromJson(responseJson.get("subtasks").toString(), Issue[].class));
