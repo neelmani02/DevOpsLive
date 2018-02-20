@@ -249,6 +249,25 @@ public class JenkinsIntegration {
 							
         
 			}
+			if(null !=issue.getFields().getJobName() && issue.getFields().getJobName().length()>0  && issue.getFields().getStatus().getName().equals(JenkinsEndPoint.ISSUESINDEV))
+			{
+			
+				
+				
+								uri = new URI(env.getJenkinsUrl() +"/job/"+issue.getFields().getJobName() +queryString);
+		
+								HttpClient authClientProj = HttpClientBuilder.create().build(); 
+								HttpGet get = new HttpGet(uri);
+								get.setHeader("Accept", "application/json");
+								get.setHeader("Content-type", "application/json");
+
+								get.setHeader("Authorization", "Basic " + new String(Base64.getEncoder().encode(jenkinsCred.getBytes())));
+								HttpResponse response = authClientProj.execute(get);
+								result = EntityUtils.toString(response.getEntity());
+								setBuildStatusDev(issue, result);
+							
+        
+			}
 	
 		
 		} catch (URISyntaxException e) {
@@ -262,6 +281,13 @@ public class JenkinsIntegration {
 			e.printStackTrace();
 		}
 		
+	}
+	private void setBuildStatusDev(Issue issue, String result) {
+		// TODO Auto-generated method stub
+		 JSONObject responseJson = new JSONObject(result);
+	        Gson gson = new Gson();
+	      String buildStatus =gson.fromJson(responseJson.get("result").toString(), String.class);
+	      issue.getFields().setBuildStatus(buildStatus);
 	}
 
 

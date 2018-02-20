@@ -2,6 +2,12 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<div class="item-wrapper">
+	
+	<c:if test ="${buildStatus == 'FAILURE' && box == 'Dev Box'}">
+         <div style="color:Red;">Last Build failed due to RESTRICTED Object i.e. CustomObject___Logs__c </div>
+      </c:if>
+      </div>
 	<div class="item-wrapper">
 		<div class="item item-id">
 			<label>ITEM ID</label> <span>${id}</span>
@@ -25,7 +31,7 @@
 			<label>CURRENT STATUS</label> <span>${status}</span>
 		</div>
 	</div>
-
+	
 	<div class="flow-chart">
 		<div class="row">
 			<div class="simple user-story col-sm-2">

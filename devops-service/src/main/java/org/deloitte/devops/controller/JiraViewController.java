@@ -75,6 +75,7 @@ public class JiraViewController{
 	   model.addAttribute("summary", issue.getFields().getSummary());
 	   model.addAttribute("description",issue.getFields().getDescription());
 	   model.addAttribute("id",issue.getId());
+	   model.addAttribute("buildStatus",issue.getFields().getBuildStatus());
 	   
 	   Map<String,String> map = new HashMap<>();
 	   if(boxStatus.equals("User Story Grooming")){
