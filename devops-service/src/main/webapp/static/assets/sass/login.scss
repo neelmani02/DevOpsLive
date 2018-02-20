@@ -1,26 +1,96 @@
+
+.navbar{
+width:100%; 
+     
+      .navbar-brand{
+      font-weight:bold;
+      margin-top: 6px;
+      font-size: 28px;
+      font-family: Arial Narrow, sans-serif;
+      color:black;
+      }
+      .nav-right-content{
+          position: absolute;
+    left: 65%;
+    top: 31%;
+      }
+      li.nav-text{
+      
+   display:inline;
+    font-size: 18px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      }
+      li{
+      
+      }
+      .btn-outline-success{
+      color: 	#9ACD32;
+    background-color: transparent;
+      
+    position: relative;
+    
+    display:inline;
+   
+    border-color: 	#9ACD32;
+      
+      
+      }
+      
+      
+      
+        
+
+
+
+
+}
+
+
+
 .login-container{
     position: relative;
     margin: 0 auto;
     text-align: left;
-    width: 80%;
-    height: 500px;
+   
+    .login-image{
+        overflow: hidden;
+    height: 77%;
+    max-width: 40%;
+    
+    float:left;
+    
+    display:inline}
 	.content{
-		float: left;
-		margin: 50px 9%;
-		font-size: 20px;
-		h3{
-			margin-bottom: 30px;
-			font-size: 15px;
-			font-weight: bold;
+		
+           float: right;
+    font-size: 20px;
+    display: inline;
+     position: absolute;
+     top: 43px;
+    left: 44%;
+		h4{
+		font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+			color:#9ACD32;
+			    font-size: 23px;
 		}
+		h6{
+		font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		font-size: 14px;
+        margin-bottom: 31px;
+		}
+		
 		button, .login-button{
-			background: #000;
+			background: #9ACD32;
 			padding: 10px 20px;
 			color: white;
 			border: 0;
-			min-width:272px;
+			min-width:103px;
 			font-size: 15px;
-			font-weight: bold;
+   			 margin-top: 20px;
+   			 margin-left: 135px;
+   			 font-weight: 200;
+   			 border-radius: 5px;
+    
 		}
 		form{
 			font-size: 15px;				
@@ -30,12 +100,17 @@
 			}
 			a{
 				text-decoration: none;
-				color: darkgrey;
+				color: blue;
 			}
 			input{
-				padding: 10px 70px 10px 20px;
+			
+				padding: 10px 133px 10px 20px;
 				background: white;
-				border: 1px solid darkgrey;
+				border: 1px solid #80808047;
+				border-radius: 6px;
+				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+				
+				
 			}
 		}
 	}

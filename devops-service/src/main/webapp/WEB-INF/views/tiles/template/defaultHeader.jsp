@@ -4,8 +4,8 @@
            <span class="glyphicon glyphicon-menu-hamburger"></span>
        </a>
        <div class="side-menu">
-       		<img class="deloitte-icon" src="/devops-service/static/assets/images/deloitte-icon.png">
-       		<h2>MENU</h2>
+       		<img class="deloitte-icon" src="/devops-service/static/assets/images/side-bar.png">
+       		
        		<ul>            
 	           <li><a href="/devops-service/about">About Control Center</a></li>
 	           <li><a href="#">About Devops</a></li>
