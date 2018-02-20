@@ -9,7 +9,7 @@
     }
 }
 .flow-chart{
-    margin: 60px 20px 30px 20px;
+    margin: 20px;
     #refresh-button{
         display: block;
         padding: 10px;
@@ -51,7 +51,7 @@
             }
             &.green{
                 label{
-                    background: #ADFF2F;
+                    background: #00cc00;
                     color: #fff;
                 }
             }
@@ -91,7 +91,7 @@
             background: #e7e7e7;
             color: #000;
             &.green{
-                background: #ADFF2F;
+                background: #00cc00;
                 color: #fff;
             }
             &.yellow{
@@ -131,7 +131,7 @@
                 border: 1px solid #333;
                 font-family: sans-serif;
                 &.green{
-                    background: #ADFF2F;
+                    background: #00cc00;
                     color: #fff;
                 }
                 &.yellow{

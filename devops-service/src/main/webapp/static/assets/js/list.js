@@ -4,7 +4,7 @@ $(document).ready(function(){
 		ordering: false,
 		bInfo: false,
 		sDom: '<"top"f>rt<"bottom"p><"clear">',
-		pageLength: 2,
+		pageLength: 5,
 		language: {
 			search: "",
 			searchPlaceholder: 'Search User Story Here...',
@@ -19,6 +19,9 @@ $(document).ready(function(){
     	if(this.id == 'userStories'){
     		$('#overviewTable_wrapper').toggle();
     		$(this).toggleClass("active");
+    		$('html, body').animate({
+    	        scrollTop: $("#overviewTable_wrapper").offset().top
+    	    }, 2000);
     	}
     });
 });

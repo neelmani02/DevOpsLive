@@ -4,24 +4,27 @@
 
 	<div class="item-wrapper">
 		<table class="">
-		<thead>
-			<tr>
-				<th>User Story ID</th>
-				<th>Description</th>
-				<th>Summary</th>
-				<th>Current Status</th>						
-		   </tr>
-		</thead>
-		<tbody>			
-		    <tr>
-		    	<td>DAB-US-211</td>
-		    	<td>Description of Story</td>
-		    	<td>Summary text</td>
-		    	<td>In Development</td>
-		    </tr>
-		    
-		 </tbody>
+			<thead>
+				<tr>
+					<th>User Story ID</th>
+					<th>Description</th>
+					<th>Summary</th>
+					<th>Current Status</th>						
+			   </tr>
+			</thead>
+			<tbody>			
+			    <tr>
+			    	<td>DAB-US-211</td>
+			    	<td>Description of Story</td>
+			    	<td>Summary text</td>
+			    	<td>In Development</td>
+			    </tr>
+			    
+			 </tbody>
 	</table>
+	</div>
+	<div class="top-heading">
+	<h2>Devops Cycle</h2>
 	</div>
 	<div class="flow-chart">
 		<div class="row">

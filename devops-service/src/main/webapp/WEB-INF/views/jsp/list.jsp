@@ -63,7 +63,7 @@
 		</thead>
 		<tbody>			
 		    <c:forEach var="userStory" items="${list}"> 
-				<tr>
+				<tr class="">
 					<td><a href="/devops-service/getIssue/${userStory.id}">${userStory.id}</a></td>
 <%-- 					<td>${userStory.key}</td>
  --%>					<td>${userStory.fields.description}</td>
