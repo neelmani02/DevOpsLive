@@ -1,96 +1,60 @@
 
 .navbar{
-width:100%; 
-     
-      .navbar-brand{
-      font-weight:bold;
-      margin-top: 6px;
-      font-size: 28px;
-      font-family: Arial Narrow, sans-serif;
-      color:black;
-      }
-      .nav-right-content{
-          position: absolute;
-    left: 65%;
-    top: 31%;
-      }
-      li.nav-text{
-      
-   display:inline;
-    font-size: 18px;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-      }
-      li{
-      
-      }
-      .btn-outline-success{
-      color: 	#9ACD32;
-    background-color: transparent;
-      
-    position: relative;
-    
-    display:inline;
-   
-    border-color: 	#9ACD32;
-      
-      
-      }
-      
-      
-      
-        
-
-
-
-
+    width:100%;     
+    .navbar-brand{
+        font-weight:bold;
+        margin-top: 6px;
+        font-size: 28px;
+        font-family: Arial Narrow, sans-serif;
+        color:black;
+    }
+    .nav-right-content{
+        position: absolute;
+        left: 65%;
+        top: 31%;
+    }
+    li.nav-text{
+        display:inline;
+        font-size: 18px;
+        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    }
+    .btn-outline-success{
+        color: 	#9ACD32;
+        background-color: transparent;      
+        position: relative;
+        display:inline;
+        border-color: 	#9ACD32;     
+    } 
 }
-
-
-
 .login-container{
     position: relative;
     margin: 0 auto;
-    text-align: left;
-   
+    text-align: left;   
     .login-image{
         overflow: hidden;
-    height: 77%;
-    max-width: 40%;
-    
-    float:left;
-    
-    display:inline}
+    }
 	.content{
-		
-           float: right;
-    font-size: 20px;
-    display: inline;
-     position: absolute;
-     top: 43px;
-    left: 44%;
-		h4{
-		font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	    font-size: 20px;
+		h1{
+		    font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 			color:#9ACD32;
-			    font-size: 23px;
+			font-size: 45px;
 		}
-		h6{
-		font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-		font-size: 14px;
-        margin-bottom: 31px;
-		}
-		
+		h4{
+            font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+            font-size: 20px;
+            margin-bottom: 31px;
+            font-weight: 400;
+		}		
 		button, .login-button{
-			background: #9ACD32;
-			padding: 10px 20px;
-			color: white;
-			border: 0;
-			min-width:103px;
-			font-size: 15px;
-   			 margin-top: 20px;
-   			 margin-left: 135px;
-   			 font-weight: 200;
-   			 border-radius: 5px;
-    
+			    background: #9ACD32;
+			    padding: 10px 20px;
+			    color: white;
+			    font-size: 15px;
+			    margin-top: 20px;
+			    margin-left: 25%;
+			    border-radius: 5px;
+			    width: 20%;    
 		}
 		form{
 			font-size: 15px;				
@@ -102,15 +66,13 @@ width:100%;
 				text-decoration: none;
 				color: blue;
 			}
-			input{
-			
-				padding: 10px 133px 10px 20px;
+			input{			
+				padding: 15px 100px 15px 20px;
 				background: white;
+				width: 70%;
 				border: 1px solid #80808047;
 				border-radius: 6px;
-				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-				
-				
+				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;		
 			}
 		}
 	}

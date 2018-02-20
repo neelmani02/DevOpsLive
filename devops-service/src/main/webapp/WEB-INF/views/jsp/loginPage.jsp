@@ -15,18 +15,14 @@
 </nav>
 
 
-<div class="login-container">
-	<div class="login-image"><img src="/devops-service/static/assets/images/login.png"></div>
-	<div class="content">
-		<h4 class="font-type">Login to ease your life.</h4>
-		<h6 class="green-color">Login to see your projects and their current status.</h6>
+<div class="login-container row">
+	<div class="login-image col-sm-6"><img src="/devops-service/static/assets/images/login.png"></div>
+	<div class="content col-sm-6">
+		<h1 class="font-type">Login to ease your life.</h1>
+		<h4 class="green-color">Login to see your projects and their current status.</h4>
 		<form action="doLogin" method="post">  
 			<div><input type="text" name="userName" placeholder="Work email address"/> </div> 
-			<div><input type="password" name="password" placeholder="Password"/></div>
-			<div>
-			
-			</div>
-			
+			<div><input type="password" name="password" placeholder="Password"/></div>			
 			<input class="login-button" type="submit" value="LOGIN"/>
 		</form>
 	</div>
