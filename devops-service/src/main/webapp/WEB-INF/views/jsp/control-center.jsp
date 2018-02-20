@@ -3,52 +3,44 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	<div class="item-wrapper">
-		<div class="item item-id">
-			<label>ITEM ID</label> <span>${id}</span>
-		</div>
-		<div class="item item-name">
-			<label>ITEM NAME</label> <span>${summary}</span>
-		</div>
-		<div class="item item-decsription">
-			<label>ITEM DESCRIPTION</label> <span>${description}</span>
-		</div>
-		<div class="item item-decsription">
-			<a href="/devops-service/getAllIssues"><label>ALL ISSUES</label> </a>
-		</div>
+		<table class="">
+		<thead>
+			<tr>
+				<th>User Story ID</th>
+				<th>Description</th>
+				<th>Summary</th>
+				<th>Current Status</th>						
+		   </tr>
+		</thead>
+		<tbody>			
+		    <tr>
+		    	<td>DAB-US-211</td>
+		    	<td>Description of Story</td>
+		    	<td>Summary text</td>
+		    	<td>In Development</td>
+		    </tr>
+		    
+		 </tbody>
+	</table>
 	</div>
-	<div class="item-wrapper no-border">
-		<div class="item stage">
-			<label>CURRENT STAGE</label> <span>${box}</span>
-			
-		</div>
-		<div class="item status">
-			<label>CURRENT STATUS</label> <span>${status}</span>
-		</div>
-	</div>
-
 	<div class="flow-chart">
 		<div class="row">
 			<div class="simple user-story col-sm-2">
-				<img src="/devops-service/static/assets/images/business-analyst.png">
-				<button class="${map.box1}"><b>User Story Grooming</b></button>
+				<button class="${map.box1}"> User Story Grooming</button>
 			</div>
 			<canvas class="horizontal-line col-sm-1" width="100" height="100">
             </canvas>
 			<div class="simple test-scripts col-sm-2">
-				<img src="/devops-service/static/assets/images/test-lead.png">
-				<button class="${subMap.box7}"><b>Test Script Submitted</b></button>
+				<button class="${subMap.box7}"> Test Script Submitted </button>
 			</div>
 			<canvas class="horizontal-line col-sm-1" width="100" height="100">
             </canvas>
 			<div class="simple test-scripts col-sm-2">
-				<img src="/devops-service/static/assets/images/product-owner.png">
-				<button class="${subMap.box8}"><b>Test Script Approved</b></button>
+				<button class="${subMap.box8}"> Test Script Approved </button>
 			</div>
-			 <a class="col-sm-2" id="refresh-button" href="">
-			 	<span class="glyphicon glyphicon-refresh"></span>
-            </a>
            
-            <div class="col-sm-2 flow-chart-legend">
+            <div class="col-sm-1 flow-chart-legend">
+            	<h3>Legend</h3>
                 <div class="green">
                     <label></label>
                     <span>&nbsp;Done</span>
@@ -70,8 +62,7 @@
 		</div>
 		<div class="row">
 			<div class="simple approval col-sm-2">
-				<img src="/devops-service/static/assets/images/product-owner.png">
-				<button class="${map.box2}"><b>User Story Approved</b></button>
+				<button class="${map.box2}"> User Story Approved </button>
 			</div>
 		</div>
 		<div class="row">
@@ -80,9 +71,8 @@
 		</div>
 		<div class="row">
 			<div class="task-box col-sm-2">
-				<img src="/devops-service/static/assets/images/developer.png">
 				<div class="border-full ${map.box3}">
-					<p class="task-headline ${map.box3}"><b>Dev Box</b></p>
+					<h3 class="task-headline ${map.box3}"> Dev Box </h3>
 					<div class="border-full ${map.box3}">
 						Dev Activities
 						<ul>
@@ -101,7 +91,7 @@
              <div class="task-box col-sm-2">
 				<img class="no-img">
 				<div class="border-full ${map.box4}">
-					<p class="task-headline ${map.box4}"><b>CI Box</b></p>
+					<h3 class="task-headline ${map.box4}"> CI Box </h3>
 					<div class="border-full ${map.box4}">
 						Deploy to CI
 						<ul>
@@ -118,9 +108,8 @@
 			<canvas class="horizontal-line col-sm-1" width="60" height="200">
                 </canvas>
 			<div class="task-box col-sm-2">
-				<img src="/devops-service/static/assets/images/product-owner.png">
 				<div class="border-full ${map.box5}">
-					<p class="task-headline ${map.box5}"><b>Test Box</b></p>
+					<h3 class="task-headline ${map.box5}"> Test Box </h3>
 					<div class="border-full ${map.box5}">
 						Test Activities
 						<ul>
@@ -137,9 +126,8 @@
 			<canvas class="horizontal-line col-sm-1" width="60" height="200">
                 </canvas>
 			<div class="task-box col-sm-2">
-				<img src="/devops-service/static/assets/images/release-manager.png">
 				<div class="border-full ${map.box6}">
-					<p class="task-headline ${map.box6}"><b>Pre Prod</b></p>
+					<h3 class="task-headline ${map.box6}"> Pre Prod </h3>
 					<div class="border-full ${map.box6}">
 						Pre-Prod Activities
 						<ul>
@@ -158,7 +146,7 @@
 			<div class="task-box col-sm-2">
 				<img class="no-img">
 				<div class="border-full ${map.box9}">
-					<p class="task-headline ${map.box9}"><b>Production</b></p>
+					<h3 class="task-headline ${map.box9}"> Production </h3>
 					<div class="border-full ${map.box9}">
 						Production Activities
 						<ul>
@@ -173,15 +161,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">  
-        </div>
-		
+		</div>		
 	</div>
 	
-<!-- 	<div class="refresh-button col-sm-2">
-        <a href="javascript:window.location.reload(true)"><b>Refresh</b></a>
-        <br>
-        <a href="https://devopstrack.atlassian.net/secure/RapidBoard.jspa?rapidView=3"><b>Jira Dashboard</b></a>
-        
-    </div> -->
+
