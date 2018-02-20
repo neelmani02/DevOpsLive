@@ -2,15 +2,16 @@
 	text-align: center;
 	.tile-wrapper{
 		display: inline-block;
-	    border: 1px solid #000;
-	    margin: 30px 10px;
-	    text-align: center;
-	    width: 200px;
+	        border: 10px solid #333333;
+		    margin: 30px 10px;
+		    text-align: center;
+		    width: 230px;
+		    height: 230px;
+		    border-radius: 50%;
+		    cursor: pointer;
 	    &.active{
-	    	cursor: pointer;
-	    }
-	    &.in-active{
-	    	background: lightgrey;
+	    	background: #333333;
+	    	color: #fff;
 	    }
 	    .number{
 	        font-size: 90px;

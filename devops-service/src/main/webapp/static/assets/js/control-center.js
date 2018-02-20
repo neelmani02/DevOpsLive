@@ -46,16 +46,9 @@ function verticalLine(){
         downTriangle(c[i]);
     }
 }
-function clickFunction() {
-	window.location.href = window.location.href;
-}
-window.onload = function() {
+
+$(document).ready(function(){
     horizontalLine();
     verticalLine();
-    document.getElementById("refresh-button").addEventListener("click", clickFunction);
-}
-window.setInterval(function(){
-	if(document.getElementById("refresh-button")){
-		clickFunction();
-	}
-},5000);
+});
+
