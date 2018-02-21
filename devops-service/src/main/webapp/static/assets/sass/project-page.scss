@@ -22,13 +22,16 @@
 	    	padding: 10px;	
 	    	color: #fff;  
 	    	padding: 7px 40px;  	
-	    }
+	    }	    
 	    .grid-view, .list-view{
 	    	margin-left: 20px;
 	    	i{
 	    		font-size: 20px;
 	    		color: #333333;
 	    	}
+	    }
+	    .grid-view i{
+	    	color: #d2d2d2;
 	    }
 	}
 	.project-table{
