@@ -19,43 +19,82 @@ header{
         position: absolute;
         left: 0;
         top: 0;
+        span{
+        font-size:20px;
+        .dab-icon{
+        height:36px;
+        margin-top: -10px;
+        }
+        }
         .side-menu {
+            font-size: 20px;
             display: none;
             position: fixed;            
-    		padding: 50px 10px 200px 40px;
+            padding: 22px 10px 200px 40px;
             left: 0;
             top: 0;
             z-index: 100;
             background: #000;
             color: #fff;
             .deloitte-icon{
-                height: 180px;
+                 height: 180px;
                 border-radius: 114px;
-                width: 225px;
+                width: 180px;
                 border: 1px;
+                margin-right: 26px;
             }
             h2{
-            	margin-top: 100px;
+            margin-top: 100px;
             }
-            ul{
-            	margin-top: 50px;
-            	padding-left: 0;
-	            li {                
-	                text-align: center;
-	                width: 100%;
-	                padding: 10px 0;
-	                margin: 0;
-	                list-style: none;
-	                display: inline-block;
-	                a{
-	                    width: auto;
-	                    height: auto;
-	                    padding: 0;
-	                    text-decoration: none;
-	                    color: #fff;
-	                }        
-	            }
-	         }
+           .first-list{
+                margin-top: 20px;
+                    border-bottom: 1px solid white;
+                    border-top: 1px solid white;
+                    padding-top: 26px;
+                    padding-bottom: 26px;
+                    padding-left: 16px;
+                    margin-right: 29px;
+                li {                
+                    text-align: center;
+                    width: 100%;
+                    padding: 7px 0;
+                    margin: 0;
+                    display: list-item;
+                    list-style-type:disc;
+                   
+                    a{
+                        width: auto;
+                        height: auto;
+                        padding: 0;
+                        text-decoration: none;
+                        color: #fff;
+                    }        
+                }
+             }
+             
+             .second-list{
+                 list-style-type: none;
+                 margin-left: -20px;
+                 font-style: italic;
+                 font-size: 19px;
+                 
+                 li {                
+                       text-align: center;
+                       width: 100%;
+                       padding: 14px 0;
+                       margin: 0;
+                    display: list-item;
+                    list-style-type:none;
+                      
+                       a{
+                           width: auto;
+                           height: auto;
+                           padding: 0;
+                           text-decoration: none;
+                           color: #fff;
+                       }        
+                   }
+             }
         
         }
         &:hover{
@@ -72,13 +111,13 @@ header{
         margin: 0;
     }
     p{
-    	text-align: center;
+       text-align: center;
         font-size: 11px;
         width: 100%;
         margin: 0;
         color: lightgray;
-	    font-style: italic;
-	    font-family: brush-script;
+           font-style: italic;
+           font-family: brush-script;
     }
     .user-name{
         padding: 10px;
