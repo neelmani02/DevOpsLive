@@ -16,8 +16,10 @@ $(document).ready(function(){
 	});
     $('#overviewTable_wrapper').hide();
     $('.tile-wrapper').on('click', function(e){
+    	$('.tile-wrapper').addClass("inactive");
     	if(this.id == 'userStories'){
     		$('#overviewTable_wrapper').toggle();
+    		$(this).removeClass("inactive");
     		$(this).toggleClass("active");
     		$('html, body').animate({
     	        scrollTop: $("#overviewTable_wrapper").offset().top
