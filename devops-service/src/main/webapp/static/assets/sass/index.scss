@@ -2,14 +2,17 @@
        width: 100%;
        margin: 0 auto;
        text-align: center;
-       background: #333333;
+       background: url(/devops-service/static/assets/images/hero-background.png) no-repeat;
+	    height: 716px;
+	    background-size: cover;
+	    background-color: rgba(225,225,225, 0.9);
        .welcome-tile{
              display: inline-block;
-             margin: 20px;
+             margin: 80px 20px 0;
              font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
              img{
-                    width: 300px;
-                    height: 300px;
+                    width: 600px;
+                    height: 350px;
              }
              h1,h6{
                     color: #fff;
@@ -21,38 +24,45 @@
                     font-size: 23px;
              }
              .signup-button{
-                    border: 1px solid #8ec640;
-                          width: 66px;
-                          text-align: center;
-                          border-radius: 15px;
-                                  background-color: #8ec640;
-                              margin: auto;
-                              a{
-                              color:#f7fcff;
-                              }
+                  border: 1px solid #8ec640;
+                  width: 90px;
+    			  padding: 2px;
+                  text-align: center;
+                  border-radius: 15px;
+                  background-color: #8ec640;
+                  margin: 30px auto;
+                  a{
+                  	color:#f7fcff;
+                  }
              }
        }
 }
 .featured-app{
-       text-align: center;
+	background: url('/devops-service/static/assets/images/Human.png') no-repeat;
+	background-size: cover;
+	.feature-content{
+		text-align: center;
+		background: rgba(225, 225, 225, 0.9);
        hr{
-           border-top: 2px solid green;
+           border-top: 2px solid #8ec640;
            width: 7%;
        }
        h1{
              text-align: center;
+             margin-top: 0;
        }
        .feature-tile{
-             margin: 30px auto;
+             padding: 30px;
              .green-button{
-             border: 1px solid #8ec640;
-            width: 102px;
-            text-align: center;
-            border-radius: 15px;
-            background-color: #8ec640;
-            a{
-            color:white;
-            }
+	             border: 1px solid #8ec640;
+	            width: 115px;
+	            text-align: center;
+	            border-radius: 15px;
+	            font-size: 17px;
+	            background-color: #8ec640;
+	            a{
+	            color:white;
+	            }
              }
              .content, img{
                     display: inline-block;
@@ -61,10 +71,10 @@
                     text-align: left;
                     width: 25%;
                     &.left{
-                           margin-right: 20%;
+                           margin-right: 6%;
                     }
                     &.right{
-                           margin-left: 20%;
+                           margin-left: 6%;
                     }
                     h3{
                            font-size: 25px;
@@ -84,44 +94,61 @@
                     width: 350px;
                     height: 350px;
                     border-radius: 180px;
+                    margin-top: -5%;
              }
        }      
+	}
 }
 
 .contact-us{
        text-align: center;
+       background: #333333;
        .content, img{
              display: inline-block;
              
        }
        img{
-             width: 300px;
-             height: 300px;
-             margin-right:76px;
-              margin-top:-204px;
+            width: 300px;
+		    height: 300px;
+		    margin-right: 76px;
+		    margin-top: -14%;
+		    border-radius: 150px;
        }
        .content{
              text-align: left;
+             h1{
+             	color: #fff;
+             	text-align: center;
+             }
+             hr{
+		           border-top: 2px solid #8ec640;
+		           width: 20%;
+		       }
+		     ::placeholder{
+		     	color: #333333;
+		     	font-weigth: bold;
+		     }
              input{
-                 width: 310px;
-                  margin-bottom: 9px;
-                   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+                width: 400px;
+    			padding: 10px;
+                margin-bottom: 9px;
+                font-size: 18px;
+                font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
              }
              .message{
              padding-bottom:80px;
              }
              .send-button{
-                    border: 1px solid #8ec640;
-                          width: 80px;
-                          text-align: center;
-                          border-radius: 15px;
-                                 background-color: #8ec640;
-                                 a{
-            color:white;
-            }
-             }
-             h1{
-                    
+                  border: 1px solid #8ec640;
+                  width: 88px;
+			      font-family: sans-serif;
+			      font-size: 18px;
+                  text-align: center;
+                  border-radius: 15px;
+                  background-color: #8ec640;
+                  a{
+			        color:white;
+			        }
              }
        }
 }

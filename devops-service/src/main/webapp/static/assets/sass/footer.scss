@@ -1,8 +1,16 @@
 #footer{
 	text-align: center;
-	margin-top: 20px;
+	padding-top: 20px;
+    background: #000;
+    height: 55px;
 	div{
-		width: 100%;
-	    float: left;
+		.footer-icon{
+			float: left;
+			margin-left: 3%;
+		}
+		span{
+			text-align: center;
+			color: #8ec640;
+		}
 	}
 }

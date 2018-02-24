@@ -1,12 +1,36 @@
 header{
-    height: 40px;
+    height: 70px;
     position: fixed;
     top:0;
     width: 100%;
     font-family: sans-serif;
     padding: 10px 0;
-    background: #fff;
+    background: rgba(225, 225, 225, 0.9);
     z-index: 100;
+    .dab-text{
+        font-size: 34px;
+        font-family: monospace;
+        font-weight: bold;
+        color: #000;
+        text-decoration: none;
+        padding: 0 30px;
+    }
+    .about, .features, .team, .login-btn{
+        float: right;
+        margin-right: 40px;
+        color: #000;
+        font-size: 20px;
+        font-family: monospace;
+    }
+    .login-btn{
+        border: 1px solid #8ec640;
+        padding: 5px 32px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #8ec640; 
+    }
     a{
         float:left;
         padding: 10px;
@@ -109,6 +133,18 @@ header{
         width: 100%;
         display: inline-block;
         margin: 0;
+          .logout-dropdown{
+            float:right;
+            margin-right:3%;
+             .dropdown-menu{
+                 min-width:102px;
+                 color:red;
+                    a{
+                      color:red;
+                        
+                    }
+             }
+        }
     }
     p{
        text-align: center;
