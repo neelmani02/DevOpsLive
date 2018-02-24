@@ -26,7 +26,7 @@
   <span class="caret"></span>
   <span class="logout-dropdown"> 
    <span class="dropdown">
-    <span class="dropdown-toggle" id="menu1" data-toggle="dropdown">Brad pitt<span class="caret"></span></span>
+    <span class="dropdown-toggle" id="menu1" data-toggle="dropdown">${name}<span class="caret"></span></span>
     
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
@@ -35,7 +35,3 @@
   </span>
   </h1>
    </span>
-
-
-   
-   <div class="user-name">${name}</div>
