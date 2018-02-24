@@ -20,7 +20,7 @@
             <tiles:insertAttribute name="home-header" />
         </header>
              
-        <section id="site-content">
+        <section id="site-content-home">
             <tiles:insertAttribute name="body" />
         </section>
          

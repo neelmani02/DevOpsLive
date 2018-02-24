@@ -1,4 +1,4 @@
-header{
+#home-header{
     height: 70px;
     position: fixed;
     top:0;
@@ -37,6 +37,16 @@ header{
             color: black;
         }
     }
+}
+header{
+    height: 50px;
+    position: fixed;
+    top:0;
+    width: 100%;
+    font-family: sans-serif;
+    padding: 10px 0;
+    background: #fff;
+    z-index: 100;
     nav {
         position: absolute;
         left: 0;

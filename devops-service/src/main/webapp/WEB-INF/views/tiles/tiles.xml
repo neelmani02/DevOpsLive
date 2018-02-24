@@ -9,8 +9,7 @@
        <put-attribute name="title" value="" />  
        <put-attribute name="header" value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />  
        <put-attribute name="body" value="" />  
-       <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
-   </definition>  
+    </definition>  
    
     <!-- No  Definition -->
    <definition name="home-definition"
