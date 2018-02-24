@@ -10,7 +10,7 @@
       </div>
 	<div class="item-wrapper">
 		<div class="item item-id">
-			<label>ITEM ID</label> <span>${id}</span>
+			<label>ITEM ID</label> <a href="https://devopsbeacon.atlassian.net/projects/DPP/issues/DPP-4?filter=allissues"><span>${id}</span></a>
 		</div>
 		<div class="item item-name">
 			<label>ITEM NAME</label> <span>${summary}</span>
@@ -107,9 +107,9 @@
              <div class="task-box col-sm-2">
 				<img class="no-img">
 				<div class="border-full ${map.box4}">
-					<p class="task-headline ${map.box4}"><b>CI Box</b></p>
+					<p class="task-headline ${map.box4}"><b>Build Box</b></p>
 					<div class="border-full ${map.box4}">
-						Deploy to CI
+						Deploy to CI/Test
 						<ul>
 							<li>Code</li>
 							<li>Quality &</li>
@@ -126,7 +126,7 @@
 			<div class="task-box col-sm-2">
 				<img src="/devops-service/static/assets/images/product-owner.png">
 				<div class="border-full ${map.box5}">
-					<p class="task-headline ${map.box5}"><b>Test Box</b></p>
+					<p class="task-headline ${map.box5}"><b>CI/Test Box</b></p>
 					<div class="border-full ${map.box5}">
 						Test Activities
 						<ul>
