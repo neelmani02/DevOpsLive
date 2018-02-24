@@ -8,6 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title><tiles:getAsString name="title" /></title>
+   	<link rel="icon" type="image/png" href="<c:url value='/static/assets/images/dab-icon.png' />" ></link>
    
 </head>
   
