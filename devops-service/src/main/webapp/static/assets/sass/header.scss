@@ -29,14 +29,6 @@
         border-radius: 20px;
         background-color: #8ec640; 
     }
-    a{
-        float:left;
-        padding: 10px;
-        .glyphicon-menu-hamburger{
-            font-size: 20px;
-            color: black;
-        }
-    }
 }
 header{
     height: 50px;
@@ -47,12 +39,20 @@ header{
     padding: 10px 0;
     background: #fff;
     z-index: 100;
+    a{
+        float:left;
+        padding: 10px;
+        .glyphicon-menu-hamburger{
+            font-size: 20px;
+            color: black;
+        }
+    }
     nav {
         position: absolute;
         left: 0;
         top: 0;
         span{
-        font-size:20px;
+            font-size:20px;
             .dab-icon{
                 height:36px;
                 margin-top: -10px;
@@ -146,9 +146,13 @@ header{
             margin-right:3%;
              .dropdown-menu{
                  min-width:102px;
-                 color:red;
+                 color:#FF4D4D;
                     a{
-                      color:red;
+                      color: #FF4D4D;
+                      font-size: 20px;
+                      span{
+                          padding-right: 10px;
+                      }
                         
                     }
              }

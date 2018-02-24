@@ -1,11 +1,11 @@
 .project-container{
 	margin: 50px auto;
 	width: 80%;
-	border: 1px solid lightgrey;
+	border: 1px solid #333333;
 	position: relative;
 	h2{
 		width: 200px;
-	    background: #fff;
+	    background: #f1f1f1;
 	    margin-top: -1.6%;
 	    margin-left: 20px;
 	    padding: 0 20
@@ -13,7 +13,7 @@
 	.edit-buttons{
 		position: absolute;
 	    right: 0;
-	    background: #fff;
+	    background: #f1f1f1;
 	    top: -45px;
 	    padding: 20px;
 	    .add-project{
@@ -36,9 +36,10 @@
 	}
 	.project-table{
 		width: 80%;
-		margin: 50px auto;
+		margin: 80px auto;
 		padding: 0 30px;
 		font-size: 20px;
+		box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.75);
 		thead{
 			background: #333333;
 			color: #fff;
@@ -54,7 +55,7 @@
 			tr{
 				td{
 					.glyphicon-trash{
-						color: red;
+						color: #FF4D4D;
 					    font-size: 21px;
 					    padding: 10px;
 					    border: 1px solid #000;
@@ -80,7 +81,10 @@
 					}
 				}
 				&:nth-child(odd){
-					background: #DCDCDC;
+					background: #f1f1f1;
+				}
+				&:nth-child(even){
+					background: #fff;
 				}
 			}
 		}
