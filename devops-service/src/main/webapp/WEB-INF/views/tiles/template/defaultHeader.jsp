@@ -7,11 +7,11 @@
                     <img class="deloitte-icon" src="/devops-service/static/assets/images/side-bar.png">
                     
                     <ul class="first-list">            
-                  <li><a href="/devops-service/about">HPE</a></li>
-                  <li><a href="#">Under Armour</a></li>
-                  <li><a href="#">Nike Inc.</a></li> 
-                  <li><a href="#">Coca Cola</a></li>
-                  <li><a href="#">Dell</a></li>            
+                  <li><a href="/devops-service/getAllIssues">Devops Live</a></li>
+                  <li><a href="#">Eli Lilly</a></li>
+                  <li><a href="#">AstraZenca</a></li> 
+                  <li><a href="#">Gilead</a></li>
+                  <li><a href="#">Estee Lauder</a></li>            
               </ul>
               <ul class="second-list">            
                   <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span>Help</a></li>
@@ -22,14 +22,14 @@
    </nav>
   <span> 
   <h1>
-  My Projects
+  ${subHeader}
   <span class="caret"></span>
   <span class="logout-dropdown"> 
    <span class="dropdown">
     <span class="dropdown-toggle" id="menu1" data-toggle="dropdown">${name}<span class="caret"></span></span>
     
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="/devops-service/"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
      </ul>
   </span>
   </span>

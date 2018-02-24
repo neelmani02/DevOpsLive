@@ -100,8 +100,8 @@ public  String doLogin(@RequestParam(value="userName") String userName, @Request
 	boolean validUser= authService.checkApplicationAccess(userName,password);
 
 	if(validUser) {
-		model.addAttribute("name", "Jon Doe");
-		model.addAttribute("subHeader","Welcome to DevOps Agile Beacon Jon!!");
+		model.addAttribute("name", "Monika Goyal");
+		model.addAttribute("subHeader","My Projects");  
 
 				return "welcome";
 	}

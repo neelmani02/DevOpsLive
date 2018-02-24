@@ -16,15 +16,15 @@
 		</div>
 		<div class="col-sm-2 border-box">
 			<div class="headline">
-				<h3>Current Phase</h3>
+				<h3>Current Sprint</h3>
 			</div>
-			<p>In Development</p>
+			<p>DAB-1</p>
 		</div>
 		<div class="col-sm-2 border-box">
 			<div class="headline">
-				<h3>Current Phase</h3>
+				<h3>Current Build</h3>
 			</div>
-			<p>In Development</p>
+			<p>1.1.2</p>
 		</div>
 		<div class="col-sm-2">
 		</div>	

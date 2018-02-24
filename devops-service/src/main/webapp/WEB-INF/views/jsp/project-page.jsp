@@ -37,7 +37,7 @@
 		    </tr>
 		     <tr>
 		    	<td>2</td>
-		    	<td>Under Armour</td>
+		    	<td>Eli Lilly</td>
 		    	<td>
 			    	<a href="#" class="checkin-btn">
 						<img src="/devops-service/static/assets/images/checkin.png"/>
@@ -50,7 +50,7 @@
 		    </tr>
 		     <tr>
 		    	<td>3</td>
-		    	<td>Nike Inc.</td>
+		    	<td>AstraZenca</td>
 		    	<td>
 			    	<a href="#" class="checkin-btn">
 						<img src="/devops-service/static/assets/images/checkin.png"/>
@@ -63,7 +63,7 @@
 		    </tr>
 		     <tr>
 		    	<td>4</td>
-		    	<td>Coca Cola</td>
+		    	<td>Gilead</td>
 		    	<td>
 			    	<a href="#" class="checkin-btn">
 						<img src="/devops-service/static/assets/images/checkin.png"/>
@@ -76,7 +76,7 @@
 		    </tr>
 		     <tr>
 		    	<td>5</td>
-		    	<td>HPI</td>
+		    	<td>Estee Lauder</td>
 		    	<td>
 			    	<a href="#" class="checkin-btn">
 						<img src="/devops-service/static/assets/images/checkin.png"/>
@@ -87,7 +87,7 @@
 					</a>
 		    	</td>
 		    </tr>
-		     <tr>
+		     <!-- <tr>
 		    	<td>6</td>
 		    	<td>Dell</td>
 		    	<td>
@@ -99,7 +99,7 @@
 						<i class="glyphicon glyphicon-trash"></i>
 					</a>
 		    	</td>
-		    </tr>
+		    </tr> -->
 		 </tbody>
 	</table>
 		

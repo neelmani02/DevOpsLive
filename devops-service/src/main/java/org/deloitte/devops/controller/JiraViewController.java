@@ -46,8 +46,8 @@ public class JiraViewController{
 	public String getAllIssues(ModelMap model) {
 		List<Issue> list = jiraService.getAllIssues();
 		model.addAttribute("list", list);
-		model.addAttribute("name", "Jon Doe");
-		model.addAttribute("subHeader","DEVOPS LIVE  PROJECT -> TRIAL VISIT OVERVIEW");
+		model.addAttribute("name", "Monika Goyal");
+		model.addAttribute("subHeader","Devops Live"); 
 
 		return "list";
 	}
@@ -74,7 +74,9 @@ public class JiraViewController{
 	   model.addAttribute("box",boxStatus);
 	   model.addAttribute("summary", issue.getFields().getSummary());
 	   model.addAttribute("description",issue.getFields().getDescription());
+	   model.addAttribute("key",issue.getKey());
 	   model.addAttribute("id",issue.getId());
+	   model.addAttribute("buildStatus",issue.getFields().getBuildStatus());
 	   
 	   Map<String,String> map = new HashMap<>();
 	   if(boxStatus.equals("User Story Grooming")){
@@ -168,8 +170,8 @@ public class JiraViewController{
 	 
 	   
 		}
-		model.addAttribute("name", "Jon Doe");
-		model.addAttribute("subHeader","CONTROL CENTRE");  
+		model.addAttribute("name", "Monika Goyal");
+		model.addAttribute("subHeader","Devops Live");  
 				
 		return "control";
 	}

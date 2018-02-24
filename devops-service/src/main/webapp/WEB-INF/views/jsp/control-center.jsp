@@ -12,17 +12,25 @@
 					<th>Current Status</th>						
 			   </tr>
 			</thead>
-			<tbody>			
+			<tbody>	
+					
 			    <tr>
-			    	<td>DAB-US-211</td>
-			    	<td>Description of Story</td>
-			    	<td>Summary text</td>
-			    	<td>In Development</td>
+			    	<td><a href="https://devopsbeacon.atlassian.net/projects/DPP/issues/${key}"><span>${id}</span></a></td>
+			    	<td>${description}</td>
+			    	<td>${summary}</td>
+			    	<td>${status}</td>
 			    </tr>
 			    
 			 </tbody>
 	</table>
 	</div>
+	
+	
+	<c:if test ="${buildStatus == 'FAILURE' && box == 'Dev Box'}">
+	<div class="item-wrapper">
+         <div style="color:Red;">Last Build failed due to RESTRICTED Object i.e. CustomObject___Logs__c </div>
+      </div>
+       </c:if>
 	<div class="top-heading">
 	<h2>Devops Cycle</h2>
 	</div>
