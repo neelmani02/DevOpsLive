@@ -4,7 +4,7 @@
 <nav class="navbar">
   
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">DAB</a>
+      <a class="navbar-brand" href="#"><img class="dab-icon" src="/devops-service/static/assets/images/dab-icon.png"></a>
     </div>
     
     <ul class="nav navbar-nav navbar-right nav-right-content">

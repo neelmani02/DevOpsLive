@@ -6,24 +6,32 @@
         margin-top: 6px;
         font-size: 28px;
         font-family: Arial Narrow, sans-serif;
-        color:black;
+		color:black;
+		.dab-icon{
+			height:36px;
+		}
     }
     .nav-right-content{
         position: absolute;
-        left: 65%;
+        left: 60%;
         top: 31%;
     }
     li.nav-text{
         display:inline;
         font-size: 18px;
-        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		margin-top: 10px;
     }
     .btn-outline-success{
         color: 	#9ACD32;
         background-color: transparent;      
         position: relative;
         display:inline;
-        border-color: 	#9ACD32;     
+        border: 2px solid #9ACD32;
+		padding: 10px 20px;
+		margin-left: 100%;
+		font-weight: bold;
+		font-size: 15px;     
     } 
 }
 .login-container{

@@ -13,9 +13,9 @@
 	<link href="<c:url value='/static/assets/build/app.min.css' />" rel="stylesheet"></link>
 </head>
   
-<body>
+<body class="login">
              
-        <section id="site-content">
+        <section id="site-content-login">
             <tiles:insertAttribute name="body" />
         </section>
          
