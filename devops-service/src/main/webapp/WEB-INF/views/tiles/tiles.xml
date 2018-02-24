@@ -20,12 +20,21 @@
        <put-attribute name="body" value="" />  
        <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
    </definition> 
+   
+    <!-- login  Definition -->
+   <definition name="login-definition"
+       template="/WEB-INF/views/tiles/layouts/loginLayout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="body" value="" />  
+   </definition> 
   
    <!-- Home Page -->
    <definition name="welcome" extends="base-definition">  
        <put-attribute name="title" value="welcome" />  
        <put-attribute name="body" value="/WEB-INF/views/jsp/welcome.jsp" />  
    </definition>  
+   
+   
    
     <definition name="index" extends="home-definition">  
        <put-attribute name="title" value="index" />  
@@ -50,7 +59,7 @@
        <put-attribute name="title" value="control" />  
        <put-attribute name="body" value="/WEB-INF/views/jsp/control-center.jsp" />  
    </definition>  
-      <definition name="login" extends="base-definition">  
+      <definition name="login" extends="login-definition">  
        <put-attribute name="title" value="login" />  
        <put-attribute name="body" value="/WEB-INF/views/jsp/loginPage.jsp" />  
    </definition>  
