@@ -102,12 +102,12 @@
              <div class="task-box col-sm-2">
 				<img class="no-img">
 				<div class="border-full ${map.box4}">
-					<h3 class="task-headline ${map.box4}"> CI Box </h3>
+					<h3 class="task-headline ${map.box4}"> Build Box </h3>
 					<div class="border-full ${map.box4}">
-						Deploy to CI
+						Deploy to CI/Test
 						<ul>
 							<li>Code</li>
-							<li>Quality &</li>
+							<li>Quality </li>
 							<li>Coverage</li>
 							<li>Check</li>
 							<li>Best</li>
@@ -120,7 +120,7 @@
                 </canvas>
 			<div class="task-box col-sm-2">
 				<div class="border-full ${map.box5}">
-					<h3 class="task-headline ${map.box5}"> Test Box </h3>
+					<h3 class="task-headline ${map.box5}"> CI/Test Box </h3>
 					<div class="border-full ${map.box5}">
 						Test Activities
 						<ul>
