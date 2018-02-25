@@ -93,6 +93,10 @@ public  String login(ModelMap model)  {
 	model.addAttribute("subHeader","PROJECT LEAD / PROJECT MANAGER LOGIN");
   return "login";        
 }
+@RequestMapping("/team")
+public  String team(ModelMap model)  {
+  return "team";        
+}
 @RequestMapping(value= "/doLogin", method = RequestMethod.POST)
 public  String doLogin(@RequestParam(value="userName") String userName, @RequestParam(value="password") String password,ModelMap model)  {
          
