@@ -34,7 +34,7 @@
         	color: #fff;
         }
         div{
-        	padding: 5px 10px;
+        	padding: 5px 5px;
     		text-align: left;
             label{
                 width: 20px;
@@ -47,7 +47,7 @@
             	font-size: 12px;
 			    position: relative;
 			    top: -8px;
-			    left: 5px;
+			    left: 2px;
             }
             &.green{
                 label{
@@ -145,7 +145,7 @@
                 top: 0;
                 width: 150px;
                 height: 150px;
-                left: 6%;
+                left: 0;
                 margin: 20px;
             }
             .border-inside{
