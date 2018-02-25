@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Access Denied!
+<h1 class="access-denied">Access Denied!</h1>
 </body>
 </html>
