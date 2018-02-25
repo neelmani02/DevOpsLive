@@ -1,6 +1,9 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 	
+<a class="back-button" href="">
+	<span class="glyphicon glyphicon-arrow-left"></span>	
+</a>
 <div>
 	<div class="top-heading">
 	<h2>Timeline</h2>
