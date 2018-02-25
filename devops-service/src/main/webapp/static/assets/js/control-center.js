@@ -48,9 +48,11 @@ function verticalLine(){
 }
 
 $(document).ready(function(){
-	setTimeout(function() {
-        location.reload();
-    }, 30000);
+	if($('#control-center').length ){
+		setTimeout(function() {
+	        location.reload();
+	    }, 30000);
+	}
     horizontalLine();
     verticalLine();
 });

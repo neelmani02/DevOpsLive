@@ -1,7 +1,8 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<a class="back-button" href="/devops-service/getAllIssues">
+	<div id="control-center">
+		<a class="back-button" href="/devops-service/getAllIssues">
 		<span class="glyphicon glyphicon-arrow-left"></span>	
 	</a>
 	<div class="item-wrapper">
@@ -176,5 +177,6 @@
 		</div>	
 		
 	</div>
-	
+		
+	</div>	
 
