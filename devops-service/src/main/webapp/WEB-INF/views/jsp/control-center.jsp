@@ -42,12 +42,12 @@
 			<div class="simple user-story col-sm-2">
 				<button class="${map.box1}"> User Story Grooming</button>
 			</div>
-			<canvas class="horizontal-line col-sm-1" width="100" height="100">
+			<canvas class="horizontal-line col-sm-1" width="60" height="100">
             </canvas>
 			<div class="simple test-scripts col-sm-2">
 				<button class="${subMap.box7}"> Test Script Submitted </button>
 			</div>
-			<canvas class="horizontal-line col-sm-1" width="100" height="100">
+			<canvas class="horizontal-line col-sm-1" width="60" height="100">
             </canvas>
 			<div class="simple test-scripts col-sm-2">
 				<button class="${subMap.box8}"> Test Script Approved </button>
@@ -71,7 +71,7 @@
 		</div>
 
 		<div class="row">
-			<canvas class="vertical-line col-sm-2" width="400" height="100">
+			<canvas class="vertical-line col-sm-2" width="200" height="60">
             </canvas>
 		</div>
 		<div class="row">
@@ -80,7 +80,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<canvas class="vertical-line col-sm-2" width="400" height="100">
+			<canvas class="vertical-line col-sm-2" width="200" height="60">
             </canvas>
 		</div>
 		<div class="row">
