@@ -84,8 +84,8 @@
 			<div class="task-box col-sm-2">
 				<div class="border-full ${map.box3}">
 					<h3 class="task-headline ${map.box3}"> Dev Box </h3>
-					<div class="border-full ${map.box3}">
-						Dev Activities
+					<div class="border-inside ${map.box3}">
+						Activities
 						<ul>
 							<li>Build</li>
 							<li>Unit Test</li>
@@ -103,7 +103,7 @@
 				<img class="no-img">
 				<div class="border-full ${map.box4}">
 					<h3 class="task-headline ${map.box4}"> Build Box </h3>
-					<div class="border-full ${map.box4}">
+					<div class="border-inside ${map.box4}">
 						Deploy to CI/Test
 						<ul>
 							<li>Code</li>
@@ -121,7 +121,7 @@
 			<div class="task-box col-sm-2">
 				<div class="border-full ${map.box5}">
 					<h3 class="task-headline ${map.box5}"> CI/Test Box </h3>
-					<div class="border-full ${map.box5}">
+					<div class="border-inside ${map.box5}">
 						Test Activities
 						<ul>
 							<li>Build</li>
@@ -139,16 +139,8 @@
 			<div class="task-box col-sm-2">
 				<div class="border-full ${map.box6}">
 					<h3 class="task-headline ${map.box6}"> Pre Prod </h3>
-					<div class="border-full ${map.box6}">
-						Pre-Prod Activities
-						<ul>
-							<li>Scipting</li>
-							<li>Testing</li>
-							<li>Pre Deploy</li>
-							<li>validation</li>
-							<li>Server Check</li>
-							<li>Review</li>
-						</ul>
+					<div class=" ${map.box6}">
+						<img class="database-icon" src="/devops-service/static/assets/images/database-icon.png">
 					</div>
 				</div>
 			</div>
@@ -158,16 +150,8 @@
 				<img class="no-img">
 				<div class="border-full ${map.box9}">
 					<h3 class="task-headline ${map.box9}"> Production </h3>
-					<div class="border-full ${map.box9}">
-						Production Activities
-						<ul>
-							<li>System access</li>
-							<li>Accuracy</li>
-							<li>End Users</li>
-							<li>Reports</li>
-							<li>Regular Check</li>
-							<li>Go Live</li>
-						</ul>
+					<div class=" ${map.box9}">
+						<img class="database-icon" src="/devops-service/static/assets/images/database-icon.png">
 
 					</div>
 				</div>
