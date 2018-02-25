@@ -22,9 +22,22 @@
 		   </tr>
 		</thead>
 		<tbody>			
-		    <tr>
+		    <!-- <tr>
 		    	<td>1</td>
 		    	<td>Devops Live</td>
+		    	<td>
+			    	<a href="/devops-service/getAllIssues" class="checkin-btn">
+						<img src="/devops-service/static/assets/images/checkin.png"/>
+						Check status
+					</a>
+					<a href="#" class="">
+						<i class="glyphicon glyphicon-trash"></i>
+					</a>
+		    	</td>
+		    </tr> -->
+		     <tr>
+		    	<td>1</td>
+		    	<td>Eli Lilly</td>
 		    	<td>
 			    	<a href="/devops-service/getAllIssues" class="checkin-btn">
 						<img src="/devops-service/static/assets/images/checkin.png"/>
@@ -37,19 +50,6 @@
 		    </tr>
 		     <tr>
 		    	<td>2</td>
-		    	<td>Eli Lilly</td>
-		    	<td>
-			    	<a href="#" class="checkin-btn">
-						<img src="/devops-service/static/assets/images/checkin.png"/>
-						Check status
-					</a>
-					<a href="#" class="">
-						<i class="glyphicon glyphicon-trash"></i>
-					</a>
-		    	</td>
-		    </tr>
-		     <tr>
-		    	<td>3</td>
 		    	<td>AstraZenca</td>
 		    	<td>
 			    	<a href="#" class="checkin-btn">
@@ -62,7 +62,7 @@
 		    	</td>
 		    </tr>
 		     <tr>
-		    	<td>4</td>
+		    	<td>3</td>
 		    	<td>Gilead</td>
 		    	<td>
 			    	<a href="#" class="checkin-btn">
@@ -75,7 +75,7 @@
 		    	</td>
 		    </tr>
 		     <tr>
-		    	<td>5</td>
+		    	<td>4</td>
 		    	<td>Estee Lauder</td>
 		    	<td>
 			    	<a href="#" class="checkin-btn">
