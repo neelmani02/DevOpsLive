@@ -1,4 +1,4 @@
-<h1>OUR TEAM</h1>
+<h1>OUR <span class="green-head">TEAM</span></h1>
 <div class="row">
 	<img alt="" src="">
 </div>
