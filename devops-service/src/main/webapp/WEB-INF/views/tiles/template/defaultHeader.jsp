@@ -4,7 +4,7 @@
            <span><img class="dab-icon" src="/devops-service/static/assets/images/dab-icon.png"></span>
        </a>
        <div class="side-menu">
-                    <img class="deloitte-icon" src="/devops-service/static/assets/images/side-bar.png">
+                    <img class="deloitte-icon" src="/devops-service/static/assets/images/slide-bar-1.png">
                     
                     <ul class="first-list">            
                   <li><a href="/devops-service/getAllIssues">Devops Live</a></li>

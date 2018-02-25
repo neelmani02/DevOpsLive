@@ -1,7 +1,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<a class="back-button" href="">
+	<a class="back-button" href="/devops-service/getAllIssues">
 		<span class="glyphicon glyphicon-arrow-left"></span>	
 	</a>
 	<div class="item-wrapper">
@@ -87,7 +87,7 @@
 				<div class="border-full ${map.box3}">
 					<h3 class="task-headline ${map.box3}"> Dev Box </h3>
 					<div class="border-inside ${map.box3}">
-						Activities
+						Activities:
 						<ul>
 							<li>Build</li>
 							<li>Unit Test</li>
@@ -106,7 +106,7 @@
 				<div class="border-full ${map.box4}">
 					<h3 class="task-headline ${map.box4}"> Build Box </h3>
 					<div class="border-inside ${map.box4}">
-						Deploy to CI/Test
+						Deploy to CI/Test:
 						<ul>
 							<li>Code</li>
 							<li>Quality </li>
@@ -124,7 +124,7 @@
 				<div class="border-full ${map.box5}">
 					<h3 class="task-headline ${map.box5}"> CI/Test Box </h3>
 					<div class="border-inside ${map.box5}">
-						Test Activities
+						Test Activities:
 						<ul>
 							<li>Build</li>
 							<li>Unit Test</li>
@@ -142,7 +142,15 @@
 				<div class="border-full ${map.box6}">
 					<h3 class="task-headline ${map.box6}"> Pre Prod </h3>
 					<div class=" ${map.box6}">
-						<img class="database-icon" src="/devops-service/static/assets/images/database-icon.png">
+					<c:if test ="${map.box6 =='grey'}">
+						<img class="database-icon" src="/devops-service/static/assets/images/grey-cy.png">
+					</c:if>
+					<c:if test ="${map.box6 =='yellow'}">
+						<img class="database-icon" src="/devops-service/static/assets/images/orange-cy.png">
+					</c:if>
+					<c:if test ="${map.box6 =='green'}">
+						<img class="database-icon" src="/devops-service/static/assets/images/green-cy.png">
+					</c:if>
 					</div>
 				</div>
 			</div>
@@ -153,12 +161,20 @@
 				<div class="border-full ${map.box9}">
 					<h3 class="task-headline ${map.box9}"> Production </h3>
 					<div class=" ${map.box9}">
-						<img class="database-icon" src="/devops-service/static/assets/images/database-icon.png">
-
+                     <c:if test ="${map.box9 =='grey'}">
+						<img class="database-icon" src="/devops-service/static/assets/images/grey-cy.png">
+					</c:if>
+					<c:if test ="${map.box9 =='yellow'}">
+						<img class="database-icon" src="/devops-service/static/assets/images/orange-cy.png">
+					</c:if>
+					<c:if test ="${map.box9 =='green'}">
+						<img class="database-icon" src="/devops-service/static/assets/images/green-cy.png">
+					</c:if>
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>	
+		
 	</div>
 	
 
