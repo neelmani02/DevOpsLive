@@ -33,7 +33,11 @@
        <put-attribute name="body" value="/WEB-INF/views/jsp/welcome.jsp" />  
    </definition>  
    
-   
+      <!-- Home Page -->
+    <definition name="team" extends="home-definition">  
+       <put-attribute name="title" value="Our Team" />  
+       <put-attribute name="body" value="/WEB-INF/views/jsp/ourTeam.jsp" />  
+   </definition>  
    
     <definition name="index" extends="home-definition">  
        <put-attribute name="title" value="index" />  
