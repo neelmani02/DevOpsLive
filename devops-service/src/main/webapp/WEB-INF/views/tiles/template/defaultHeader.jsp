@@ -23,7 +23,6 @@
   <span> 
   <h1>
   ${subHeader}
-  <span class="caret"></span>
   <span class="logout-dropdown"> 
    <span class="dropdown">
     <span class="dropdown-toggle" id="menu1" data-toggle="dropdown">${name}<span class="caret"></span></span>
