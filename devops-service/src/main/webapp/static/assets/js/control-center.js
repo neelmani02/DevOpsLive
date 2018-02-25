@@ -51,7 +51,7 @@ $(document).ready(function(){
 	if($('#control-center').length ){
 		setTimeout(function() {
 	        location.reload();
-	    }, 30000);
+	    }, 3000);
 	}
     horizontalLine();
     verticalLine();
