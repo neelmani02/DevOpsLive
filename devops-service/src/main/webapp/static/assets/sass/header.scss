@@ -141,9 +141,10 @@ header{
         width: 100%;
         display: inline-block;
         margin: 0;
+        position: relative;
           .logout-dropdown{
-            float:right;
-            margin-right:3%;
+            position: absolute;
+            right: 1%;
              .dropdown-menu{
                  min-width:102px;
                  color:#FF4D4D;
