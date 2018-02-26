@@ -7,8 +7,8 @@
                     <img class="deloitte-icon" src="/devops-service/static/assets/images/slide-bar-1.png">
                     
                     <ul class="first-list">            
-                  <li><a href="/devops-service/getAllIssues">Devops Live</a></li>
-                  <li><a href="#">Eli Lilly</a></li>
+<!--                   <li><a href="/devops-service/getAllIssues">Devops Live</a></li>
+ -->              <li><a href="/devops-service/getAllIssues">Eli Lilly</a></li>
                   <li><a href="#">AstraZenca</a></li> 
                   <li><a href="#">Gilead</a></li>
                   <li><a href="#">Estee Lauder</a></li>            

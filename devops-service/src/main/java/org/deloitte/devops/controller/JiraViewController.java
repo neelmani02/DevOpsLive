@@ -47,7 +47,7 @@ public class JiraViewController{
 		List<Issue> list = jiraService.getAllIssues();
 		model.addAttribute("list", list);
 		model.addAttribute("name", "Monika Goyal");
-		model.addAttribute("subHeader","Devops Live"); 
+		model.addAttribute("subHeader","Eli Lilly"); 
 
 		return "list";
 	}
@@ -171,7 +171,7 @@ public class JiraViewController{
 	   
 		}
 		model.addAttribute("name", "Monika Goyal");
-		model.addAttribute("subHeader","Devops Live");  
+		model.addAttribute("subHeader","Eli Lilly");  
 				
 		return "control";
 	}
