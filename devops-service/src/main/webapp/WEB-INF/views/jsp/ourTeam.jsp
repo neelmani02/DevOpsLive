@@ -13,8 +13,10 @@
 	</div>
 	
 	<div class="row">
-		<div class="col-sm-4"><img alt="" src="/devops-service/static/assets/images/piyush.png"><p>Piyush Modi</p></div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-2"><img alt="" src="/devops-service/static/assets/images/piyush.png"><p>Piyush Modi</p></div>
 		<div class="col-sm-4"><img alt="" src="/devops-service/static/assets/images/rijesh.png"><p>Rijesh Kunniyur</p></div>
-		<div class="col-sm-4"><img alt="" src="/devops-service/static/assets/images/sofi.png"><p>Sofi M Ahmed</p></div>
+		<div class="col-sm-2"><img alt="" src="/devops-service/static/assets/images/sofi.png"><p>Sofi M Ahmed</p></div>
+		<div class="col-sm-2"></div>
 	</div>
 </div>
