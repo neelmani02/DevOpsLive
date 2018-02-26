@@ -18,7 +18,7 @@
 			<tbody>	
 					
 			    <tr>
-			    	<td><a href="https://devopsbeacon.atlassian.net/projects/DPP/issues/${key}"><span>${id}</span></a></td>
+			    	<td><a target="_blank" href="https://devopsbeacon.atlassian.net/projects/DPP/issues/${key}"><span>${id}</span></a></td>
 			    	<td>${description}</td>
 			    	<td>${summary}</td>
 			    	<td>${status}</td>
