@@ -1,120 +1,78 @@
 package org.deloitte.devops.controller;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.ws.rs.Produces;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPathExpressionException;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
-import org.codehaus.jettison.json.JSONException;
-import org.codehaus.jettison.json.JSONObject;
+import org.deloitte.devops.bo.DevopsServiceBO;
 import org.deloitte.devops.config.EnivironmentConfig;
 import org.deloitte.devops.jira.service.AuthService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.xml.sax.SAXException;
 
-@Controller
+@RestController
 public class AuthController {
+	private static final Logger LOG = LoggerFactory.getLogger(AuthController.class);
 	
-@Autowired
-private EnivironmentConfig env;
-@Autowired	
-private AuthService authService;
+	private EnivironmentConfig env;
+	private AuthService authService;
+	private DevopsServiceBO bo;
 
-@RequestMapping(method = RequestMethod.GET,value = "/auth")
-public @ResponseBody String authUser() throws ClientProtocolException, IOException, ParserConfigurationException,
-                           SAXException, XPathExpressionException, JSONException, URISyntaxException {
-             
-             
-             
-             String authUrl = "https://trackcumtrack.atlassian.net/rest/auth/1/session";
-
-             HttpClient authClient = HttpClientBuilder.create().build(); 
-             HttpPost post = new HttpPost(authUrl);
-             
-             JSONObject jObject = new JSONObject();
-             jObject.put("username", "neelmani02@gmail.com");
-             jObject.put("password", "Dec@2017ns");
-             
-             String userandpass = jObject.toString();
-
-             HttpEntity entity = new ByteArrayEntity(userandpass.getBytes());
-             /*post.setHeader("Accept", "application/json");
-             post.setHeader("Content-type", "application/json");
-             post.setEntity(entity);
-             HttpResponse response = authClient.execute(post);
-             String result = EntityUtils.toString(response.getEntity());
-             System.out.println("rest.."+result);       */   
-             
-             String projsURL = "https://devopslive.atlassian.net/rest/api/2/search?"
-             		+ "jql=project=\"DevOps+%20+Portal+%20+Project\"+%26+fields=id,key,description,summary,creator,status+%26+startAt=1+%26+maxResults=50";
-             String queryString ="jql=project=\"DevOps Portal Project\"&fields=id,key,description,summary,creator,status&startAt=1&maxResults=50";
-             String cred = env.getUserName()+":"+env.getPassword();
-             String str = env.getURL();
-             URI uri = new URI("https", null, env.getURL(), -1, "/rest/api/2/search", queryString, null);
-             HttpClient authClientProj = HttpClientBuilder.create().build(); 
-             HttpGet get = new HttpGet(uri);
-            
-             
-             
-             get.setHeader("Accept", "application/json");
-             get.setHeader("Content-type", "application/json");
-             //get.setHeader("-u", "neelsindwani@gmail.com:Nov@2017ns");
-             get.setHeader("Authorization", "Basic " + new String(Base64.getEncoder().encode(cred.getBytes())));
-             HttpResponse responseProjs = authClientProj.execute(get);
-             String projsResult = EntityUtils.toString(responseProjs.getEntity());
-              System.out.println("projsResult.."+projsResult);
-
-             return projsResult;
-}
-
-@RequestMapping("/login")
-public  String login(ModelMap model)  {
-	model.addAttribute("subHeader","PROJECT LEAD / PROJECT MANAGER LOGIN");
-  return "login";        
-}
-@RequestMapping("/team")
-public  String team(ModelMap model)  {
-  return "team";        
-}
-@RequestMapping(value= "/doLogin", method = RequestMethod.POST)
-public  String doLogin(@RequestParam(value="userName") String userName, @RequestParam(value="password") String password,ModelMap model)  {
-         
-	
-	boolean validUser= authService.checkApplicationAccess(userName,password);
-
-	if(validUser) {
-		model.addAttribute("name", "Monika Goyal");
-		model.addAttribute("subHeader","My Projects");  
-
-				return "welcome";
+	public AuthController(EnivironmentConfig env, AuthService authService, DevopsServiceBO bo) {
+		this.env = env;
+		this.authService = authService;
+		this.bo = bo;
 	}
-	else {
-		model.addAttribute("subHeader","Access Denied");
-		return "error";        
 
+	@GetMapping("/auth")
+	public String authUser() {
+
+		String authURL = env.getURL() + "/rest/api/2/search";
+
+		Map<String, Object> uriVariables = new HashMap<>();
+		uriVariables.put("jql", "project=\"DevOps Portal Project\"");
+		uriVariables.put("fields", "id,key,description,summary,creator,status");
+		uriVariables.put("startAt", "1");
+		uriVariables.put("maxResults", "50");
+		
+		LOG.info("Query strings - [{}]", uriVariables);
+		
+		String result = bo.getAuthResponse(authURL, uriVariables);
+		LOG.info("Returned by getAuthResponse - [{}]", result);
+		return result;
 	}
-}
+
+	@GetMapping("/login")
+	public String login(ModelMap model) {
+		model.addAttribute("subHeader", "PROJECT LEAD / PROJECT MANAGER LOGIN");
+		return "login";
+	}
+
+	@GetMapping("/team")
+	public String team(ModelMap model) {
+		return "team";
+	}
+
+	@PostMapping("/doLogin")
+	public String doLogin(@RequestParam(value = "userName") String userName,
+			@RequestParam(value = "password") String password, ModelMap model) {
+
+		boolean validUser = authService.checkApplicationAccess(userName, password);
+
+		if (validUser) {
+			model.addAttribute("name", "Monika Goyal");
+			model.addAttribute("subHeader", "My Projects");
+
+			return "welcome";
+		} else {
+			model.addAttribute("subHeader", "Access Denied");
+			return "error";
+
+		}
+	}
 
 }
-

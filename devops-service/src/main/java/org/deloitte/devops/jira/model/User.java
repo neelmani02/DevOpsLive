@@ -2,9 +2,9 @@ package org.deloitte.devops.jira.model;
 
 public class User {
 
-	 private String displayName;
+	private String displayName;
 
-	 private String emailAddress;
+	private String emailAddress;
 
 	public String getDisplayName() {
 		return displayName;
@@ -22,6 +22,4 @@ public class User {
 		this.emailAddress = emailAddress;
 	}
 
-	
-	
 }
