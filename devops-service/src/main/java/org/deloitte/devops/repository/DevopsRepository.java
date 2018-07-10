@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 
 public interface DevopsRepository {
 	
-	public <T> T get(String url, Class<T> responseType, Map<String, ?> uriVariables, String authHeader);
+	public <T> T get(String url, Class<T> responseType, Map<String, Object> uriVariables, String authHeader);
 	
 	public <T, E> T post(String url, Class<T> responseType, E requestBody, String authHeader);
 	

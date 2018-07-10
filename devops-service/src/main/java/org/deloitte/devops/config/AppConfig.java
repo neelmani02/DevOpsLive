@@ -1,30 +1,22 @@
 package org.deloitte.devops.config;
 
 
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
  
  
 @Configuration
-public class AppConfig {
-	@Autowired
-	private EnivironmentConfig env;
+public class AppConfig implements WebMvcConfigurer {
     /**
      * Configure TilesConfigurer.
      */
@@ -35,15 +27,6 @@ public class AppConfig {
         tilesConfigurer.setCheckRefresh(true);
         return tilesConfigurer;
     }
-    
-   /* @Bean
-    public InternalResourceViewResolver viewResolver() {
-    	InternalResourceViewResolver vr = new InternalResourceViewResolver();
-    	vr.setPrefix("/WEB-INF/views/jsp/");
-    	vr.setSuffix(".jsp");
-    	return vr;
-    	
-    }*/
     
     @Bean
     public static PropertyPlaceholderConfigurer properties(){
@@ -58,7 +41,7 @@ public class AppConfig {
     /**
      * Configure ViewResolvers to deliver preferred views.
      */
-//    @Override
+    @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         TilesViewResolver viewResolver = new TilesViewResolver();
         registry.viewResolver(viewResolver);
@@ -69,32 +52,11 @@ public class AppConfig {
      * Configure ResourceHandlers to serve static resources like CSS/ Javascript etc...
      */
      
-//    @Override
+    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**").addResourceLocations("/static/");
         registry.addResourceHandler("/views/**").addResourceLocations("/views/");
     }
-    
-   /* <bean id="environment"
-    	    class="org.deloitte.devops.config.EnivironmentConfig"></bean>
-    	 <bean id="service"
-    	    class="org.deloitte.devops.jira.service.JiraService"></bean>
-    	 <bean id="integration"
-    	    class="org.deloitte.devops.jira.integration.JiraIntegration"></bean>*/
-     
-    
-  /*  @Bean
-    public EnivironmentConfig environment() {
-        return new EnivironmentConfig();
-    }
-    @Bean
-    public JiraService jiraService() {
-        return new JiraService();
-    }
-    @Bean
-    public JiraIntegration jiraIntegration() {
-        return new JiraIntegration();
-    }*/
     
     @Bean
     public RestTemplate restTemplate() {

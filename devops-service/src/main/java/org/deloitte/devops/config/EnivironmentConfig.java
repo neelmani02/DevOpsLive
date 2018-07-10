@@ -7,11 +7,12 @@ import org.springframework.stereotype.Component;
 public class EnivironmentConfig {
 	
 	@Value("${jira.url}")
-	private String url;
+	private String jiraURL;
 	@Value("${jira.username}")
-	private String userName;
+	private String jiraUserName;
 	@Value("${jira.password}")
-	private String password;
+	private String jiraPassword;
+	
 	@Value("${application.userName}")
 	private String appUserName;
 	@Value("${application.password}")
@@ -25,14 +26,14 @@ public class EnivironmentConfig {
 	@Value("${jenkins.password}")
 	private String jenkinsPassword;
 	
-	public String getURL() {
-		return url;
+	public String getJiraURL() {
+		return jiraURL;
 	}
-	public String getUserName() {
-		return userName;
+	public String getJiraUserName() {
+		return jiraUserName;
 	}
-	public String getPassword() {
-		return password;
+	public String getJiraPassword() {
+		return jiraPassword;
 	}
 	public String getAppUserName() {
 		return appUserName;

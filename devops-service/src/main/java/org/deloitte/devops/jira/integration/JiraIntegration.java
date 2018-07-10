@@ -1,92 +1,39 @@
 package org.deloitte.devops.jira.integration;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
-import org.deloitte.devops.config.EnivironmentConfig;
+import org.deloitte.devops.helper.JenkinsJiraHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
 @Component
 public class JiraIntegration {
+	private static final Logger LOG = LoggerFactory.getLogger(JiraIntegration.class);
 
-	
 	@Autowired
-	private EnivironmentConfig env;
-	
-	public String getAllIssues()  {
-		// TODO Auto-generated method stub
+	private JenkinsJiraHelper helper;
+
+	public String getAllIssues() {
+		Map<String, Object> allIssuesParamMap = new HashMap<>();
+		allIssuesParamMap.put("jql", "project=\"DevOps Portal Project\"");
+		allIssuesParamMap.put("fields", "id,key,description,summary,creator,status,issuetype,customfield_10201");
+		allIssuesParamMap.put("startAt", 0);
+		allIssuesParamMap.put("maxResults", 50);
 		
-		String queryString =JiraEndPoint.allIssues;
-        String cred = env.getUserName()+":"+env.getPassword();
-        String str = env.getURL();
-        URI uri;
-        String result = "";
-		try {
-			uri = new URI("https", null, env.getURL(), -1, JiraEndPoint.generalSearch , queryString, null);
-		
-        HttpClient authClientProj = HttpClientBuilder.create().build(); 
-        HttpGet get = new HttpGet(uri);
-        get.setHeader("Accept", "application/json");
-        get.setHeader("Content-type", "application/json");
-        //get.setHeader("-u", "neelsindwani@gmail.com:Nov@2017ns");
-        get.setHeader("Authorization", "Basic " + new String(Base64.getEncoder().encode(cred.getBytes())));
-        HttpResponse response = authClientProj.execute(get);
-        result = EntityUtils.toString(response.getEntity());
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        return result;
-	
+		String result = helper.exchangeWithJira(HttpMethod.GET, allIssuesParamMap, null, JiraEndPoint.GENERAL_SEARCH);
+
+		LOG.info("Result - - [{}]", result);
+		return result;
 	}
 
 	public String getIssue(String id) {
-		// TODO Auto-generated method stub
-		
-		//String queryString =JiraEndPoint.getIssue +"/"+id;
-        String cred = env.getUserName()+":"+env.getPassword();
-        String str = env.getURL();
-        URI uri;
-        String result = "";
-		try {
-			uri = new URI("https", null, env.getURL(), -1, JiraEndPoint.getIssue +"/"+id,"", null);
-		
-        HttpClient authClientProj = HttpClientBuilder.create().build(); 
-        HttpGet get = new HttpGet(uri);
-        get.setHeader("Accept", "application/json");
-        get.setHeader("Content-type", "application/json");
-        //get.setHeader("-u", "neelsindwani@gmail.com:Nov@2017ns");
-        get.setHeader("Authorization", "Basic " + new String(Base64.getEncoder().encode(cred.getBytes())));
-        HttpResponse response = authClientProj.execute(get);
-        result = EntityUtils.toString(response.getEntity());
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        return result;
-	
+		String result = helper.exchangeWithJira(HttpMethod.GET, null, null, JiraEndPoint.GET_ISSUE, id);
+		LOG.info("Result - - [{}]", result);
+		return result;
+
 	}
 }

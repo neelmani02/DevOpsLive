@@ -1,5 +1,6 @@
 package org.deloitte.devops.repository;
 
+import java.util.Collections;
 import java.util.Map;
 
 import org.deloitte.devops.jira.constants.ApplicationConstants;
@@ -26,7 +27,7 @@ public class DevposServiceRepository implements DevopsRepository, ApplicationCon
 	}
 
 	@Override
-	public <T> T get(String url, Class<T> responseType, Map<String, ?> uriVariables, String authHeader) {
+	public <T> T get(String url, Class<T> responseType, Map<String, Object> uriVariables, String authHeader) {
 		return exchange(url, responseType, null, uriVariables, HttpMethod.GET, authHeader);
 	}
 
@@ -55,7 +56,11 @@ public class DevposServiceRepository implements DevopsRepository, ApplicationCon
 		}
 
 		HttpEntity<?> entity = new HttpEntity<>(requestBody, headers);
-
+		
+		if(uriVariables == null) {
+			uriVariables = Collections.emptyMap();
+		}
+		
 		ResponseEntity<T> response = template.exchange(url, method, entity, responseType, uriVariables);
 		LOG.info("Response returned with status - [{}]", response.getStatusCodeValue());
 

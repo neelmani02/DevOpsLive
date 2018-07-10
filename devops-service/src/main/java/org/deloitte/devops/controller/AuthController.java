@@ -3,35 +3,33 @@ package org.deloitte.devops.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.deloitte.devops.bo.DevopsServiceBO;
 import org.deloitte.devops.config.EnivironmentConfig;
+import org.deloitte.devops.helper.JenkinsJiraHelper;
 import org.deloitte.devops.jira.service.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpMethod;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class AuthController {
 	private static final Logger LOG = LoggerFactory.getLogger(AuthController.class);
 	
-	private EnivironmentConfig env;
 	private AuthService authService;
-	private DevopsServiceBO bo;
+	private JenkinsJiraHelper helper;
 
-	public AuthController(EnivironmentConfig env, AuthService authService, DevopsServiceBO bo) {
-		this.env = env;
+	public AuthController(EnivironmentConfig env, AuthService authService, JenkinsJiraHelper helper) {
 		this.authService = authService;
-		this.bo = bo;
+		this.helper = helper;
 	}
 
 	@GetMapping("/auth")
 	public String authUser() {
-
-		String authURL = env.getURL() + "/rest/api/2/search";
 
 		Map<String, Object> uriVariables = new HashMap<>();
 		uriVariables.put("jql", "project=\"DevOps Portal Project\"");
@@ -41,38 +39,39 @@ public class AuthController {
 		
 		LOG.info("Query strings - [{}]", uriVariables);
 		
-		String result = bo.getAuthResponse(authURL, uriVariables);
+		String result = helper.exchangeWithJira(HttpMethod.POST, uriVariables, null, "/rest/api/2/search");
 		LOG.info("Returned by getAuthResponse - [{}]", result);
 		return result;
 	}
 
 	@GetMapping("/login")
-	public String login(ModelMap model) {
-		model.addAttribute("subHeader", "PROJECT LEAD / PROJECT MANAGER LOGIN");
-		return "login";
+	public ModelAndView login(ModelMap model) {
+		ModelAndView mav = new ModelAndView("login");
+		mav.getModelMap().addAttribute("subHeader", "PROJECT LEAD / PROJECT MANAGER LOGIN");
+		return mav;
 	}
 
 	@GetMapping("/team")
-	public String team(ModelMap model) {
-		return "team";
+	public ModelAndView team() {
+		return new ModelAndView("team");
 	}
 
 	@PostMapping("/doLogin")
-	public String doLogin(@RequestParam(value = "userName") String userName,
+	public ModelAndView doLogin(@RequestParam(value = "userName") String userName,
 			@RequestParam(value = "password") String password, ModelMap model) {
-
+		ModelAndView mav = new ModelAndView();
 		boolean validUser = authService.checkApplicationAccess(userName, password);
-
+		String viewName = "";
 		if (validUser) {
 			model.addAttribute("name", "Monika Goyal");
 			model.addAttribute("subHeader", "My Projects");
-
-			return "welcome";
+			viewName = "welcome";
 		} else {
 			model.addAttribute("subHeader", "Access Denied");
-			return "error";
-
+			viewName = "error";
 		}
+		mav.setViewName(viewName);
+		return mav;
 	}
 
 }
